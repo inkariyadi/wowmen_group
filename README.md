@@ -1,35 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wowmen Group Project
 
-## Getting Started
+## How to Run Application
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
+Run the development server:
+```
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build package:
+```
+yarn build
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Run production build:
+```
+yarn start
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+## Stack & Library used
+1. Next.js & React.js
+2. Eslint
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Git Flow - Feature
+1. Base branch : `develop`
+3. Create new branch for every pages. There is no naming format but `page/page-name` is a recommended format.
+4. If the page is too big, please divide the page into sub-page, each with different branch.
+5. After finishing a page, create a pull request and assign other teammate to review the code. 
+6. PR Format : `[Page] <name of page>` for page and `[Feature] <name of feature>`.
+7. After PR approved, merge to : `develop` using `git merge squash`.
 
-## Learn More
+## Git Flow - Release
+1. If the commits in develop are ready for production, 
+2. Create pull request. The master branch is protected, so you have to create pull request & get reviewed first
+3. After request approved, merge to : `master` using `git merge commit`.
 
-To learn more about Next.js, take a look at the following resources:
+## Git Flow - Hotfix
+1. If the production code has bug, create new branch. There is no naming format but `hotfix/issue-name` is a recommended format.
+2. Base branch : `master`
+3. Create pull request. The master branch is protected, so you have to create pull request & get reviewed first
+4. After request approved, merge to : `master` using `git merge commit`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# wowmen_group
