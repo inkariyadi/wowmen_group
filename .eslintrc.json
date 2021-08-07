@@ -22,19 +22,19 @@
     ],
     "rules": {
         "indent": [
-            "off",
+            "error",
             "tab"
         ],
         "linebreak-style": [
-            "warn",
+            "error",
             "unix"
         ],
         "quotes": [
-            "warn",
+            "error",
             "single"
         ],
         "semi": [
-            "warn",
+            "error",
             "always"
         ],
         "@typescript-eslint/explicit-module-boundary-types": "off"
