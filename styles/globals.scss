@@ -1,4 +1,8 @@
+// Basic styling
 @import './fonts.scss';
+@import './colors.scss';
+
+// Component styling
 @import './components/button.scss';
 
 html,
@@ -10,6 +14,7 @@ body {
 
 a {
   color: inherit;
+  font-family: $ternary-font;
   text-decoration: none;
 }
 
