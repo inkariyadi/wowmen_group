@@ -4,7 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: $primary-font
+  font-family: $primary-font;
 }
 
 a {
@@ -16,6 +16,6 @@ a {
   box-sizing: border-box;
 }
 .tesss{
-  font-family: 'Natural Signature';
+  font-family: $ternary-font;
   font-size:42px;
 }
