@@ -200,9 +200,55 @@
   font-style: normal;
 }
 
-// AT Apoc not found :(((
-@import url('https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'AT Apoc';
+    src: url('/fonts/ATApoc/AT Apoc Dark Italic.ttf');
+    src: local('/fonts/ATApoc/AT Apoc Dark Italic'),
+        url('/fonts/ATApoc/AT Apoc Dark Italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url('/fonts/ATApoc/AT Apoc Dark.ttf');
+    src: local('/fonts/ATApoc/AT Apoc Dark'),
+        url('/fonts/ATApoc/AT Apoc Dark.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url('/fonts/ATApoc/AT Apoc Light Italic.ttf');
+    src: local('/fonts/ATApoc/AT Apoc Light Italic'),
+        url('/fonts/ATApoc/AT Apoc Light Italic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url('/fonts/ATApoc/AT Apoc Light.ttf');
+    src: local('/fonts/ATApoc/AT Apoc Light'),
+        url('/fonts/ATApoc/AT Apoc Light.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url('/fonts/ATApoc/AT Apoc Revelations Italic.ttf');
+    src: local('/fonts/ATApoc/AT Apoc Revelations Italic'),
+        url('/fonts/ATApoc/AT Apoc Revelations Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'AT Apoc';
+    src: url('/fonts/ATApoc/AT Apoc Revelations.ttf');
+    src: local('/fonts/ATApoc/AT Apoc Revelations'),
+        url('/fonts/ATApoc/AT Apoc Revelations.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
 
 $primary-font: 'Haas Grot Disp';
-$secondary-font: 'Taviraj';
+$secondary-font: 'AT Apoc';
 $ternary-font: 'Natural Signature';
