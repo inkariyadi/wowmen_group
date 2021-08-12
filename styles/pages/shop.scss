@@ -1,0 +1,173 @@
+.shop {
+  &-first {
+    background-color: $banana;
+    min-height: 0 !important;
+    z-index: 3;
+
+    .its-time {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: 5vh 0 0;
+  
+      @media (max-width: 768px) {
+        padding: 10vh 0 2.5vh;
+      }
+  
+      &-title {
+        font-family: $ternary-font;
+        transform: translateX(-20%);
+        position: relative;
+        z-index: 2;
+      }
+  
+      &-for-shopping {
+        background-color: $pink-tipes;
+        display: inline-block;
+        padding: 1% 5%;
+        width: auto;
+        transform: translateY(-25%) rotate(-5deg);
+  
+        h2 {
+          color: $dark-blue;
+          font-weight: 400;
+          transform: rotate(1.5deg);
+        }
+      }
+  
+      .polkadot-green-bag {
+        align-self: flex-end;
+        width: clamp(135px, 24%, 240px);
+        transform: translateY(-60%);
+  
+        @media (min-width: 769px) {
+          transform: translate(-25%, -60%);
+        }
+  
+        @media (min-width: 1100px) {
+          transform: translate(-60%, -60%);
+        }
+  
+        @media (max-width: 769px) {
+          transform: translate(-10%, -30%);
+        }
+      }
+    }
+  }
+
+  &-second {
+    position: relative;
+    top: -25vh;
+    background-color: $myblue;
+    width: 100%;
+    display: block !important;
+    padding: 0 clamp(20px, 15%, 80px);
+    padding-top: 25vh;
+
+    @media (min-width: 769px) {
+      top: -40vh;
+      padding-top: 25vh;
+    }
+
+    h4 {
+      color: white;
+      font-style: italic;
+      position: relative;
+      left: 15%;
+      width: 85%;
+      margin-bottom: 80px;
+    }
+
+    .our-merchandise {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: -25px;
+
+        & > div {
+          padding: 25px;
+        }
+      }
+    }
+  }
+}
+
+.triangle-page-limit {
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  top: -1px;
+  height: 25vh;
+  
+  @media (min-width: 769px) {
+    height: 40vh;
+  }
+
+  & > div {
+    background-color: $banana;
+    position: absolute;
+    height: 100%;
+    z-index: 5;
+  }
+
+  & > div:nth-child(1) {
+    width: 25%;
+    clip-path: polygon(100% 0, 100% 24%, 0 100%, 0 0);
+  }
+
+  & > div:nth-child(2) {
+    left: 24%;
+    width: 46%;
+    clip-path: polygon(100% 0, 60% 55%, 0 24%, 0 0);
+  }
+
+  & > div:nth-child(3) {
+    width: 31%;
+    left: 69%;
+    clip-path: polygon(100% 0, 100% 70%, 80% 90%, 0 0);
+  }
+
+  @media (max-width: 768px) {
+    & > div:nth-child(1) {
+      width: 25%;
+      clip-path: polygon(100% 0, 100% 24%, 0 100%, 0 0);
+    }
+  
+    & > div:nth-child(2) {
+      left: 24%;
+      width: 46%;
+      clip-path: polygon(100% 0, 60% 55%, 0 24%, 0 0);
+    }
+  
+    & > div:nth-child(1) {
+      width: 25%;
+      clip-path: polygon(100% 0, 100% 24%, 0 100%, 0 0);
+    }
+  
+    & > div:nth-child(2) {
+      left: 5%;
+      width: 50%;
+      clip-path: polygon(100% 0, 56% 80%, 0 24%, 0 0);
+    }
+  
+    & > div:nth-child(3) {
+      width: 50%;
+      left: 50%;
+      clip-path: polygon(100% 0, 100% 45%, 36% 68%, 0 0);
+    }
+
+    & > div:nth-child(4) {
+      width: 25%;
+      left: 75%;
+      clip-path: polygon(100% 0, 100% 54%, 100% 100%, 0 0);
+    }
+  }
+}

@@ -39,6 +39,13 @@
             "always"
         ],
         "@typescript-eslint/explicit-module-boundary-types": "off",
-        "comma-dangle": ["error", "always"]
+        "comma-dangle": ["error", {
+            "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline",
+            "functions": "never"
+        }],
+        "react/prop-types": 0
     }
 }

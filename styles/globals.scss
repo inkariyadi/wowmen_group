@@ -1,11 +1,23 @@
 // Basic styling
 @import './fonts.scss';
+@import './colors.scss';
+@import './typography.scss';
+
+// Component Styling
+@import './components/navbar.scss';
+@import './components/product-card.scss';
+
+// Page Styling
+@import './pages/shop.scss';
+
 
 html,
-body {
+body, 
+* {
   padding: 0;
   margin: 0;
-  font-family: $primary-font
+  font-family: $primary-font;
+  box-sizing: border-box;
 }
 
 a {
@@ -14,10 +26,18 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+img {
+  max-width: 100%;
 }
-.tesss{
-  font-family: 'Natural Signature';
-  font-size:42px;
+
+.section-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &.pt {
+    padding-top: 135px;
+  }
 }
