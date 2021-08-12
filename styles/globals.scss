@@ -1,5 +1,4 @@
 @import './fonts.scss';
-@import './components/button.scss';
 
 html,
 body {
@@ -15,4 +14,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+.tesss{
+  font-family: 'Natural Signature';
+  font-size:42px;
 }
