@@ -63,8 +63,13 @@
     background-color: $myblue;
     width: 100%;
     display: block !important;
-    padding: 0 clamp(20px, 15%, 80px);
+    padding: 0 64px;
     padding-top: 25vh;
+
+    @media (max-width: 768px) {
+      padding: 0 12px;
+      padding-top: 25vh;
+    }
 
     @media (min-width: 769px) {
       top: -40vh;
@@ -93,6 +98,14 @@
 
         & > div {
           padding: 25px;
+        }
+        
+        @media (max-width: 768px) {
+          margin: -12px;
+
+          & > div {
+            padding: 12px;
+          }
         }
       }
     }
