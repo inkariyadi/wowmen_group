@@ -8,7 +8,7 @@ import menuList from './menuList';
 const Navbar : React.FC = () => {
   return (
     <header className="navbar">
-      <img className="navbar-img" src="/images/navbar/zigzag-background.png" alt="Navbar" />
+      <img className="navbar-img" src="/images/navbar/navbarBackground.png" alt="Navbar" />
       <div className="menu">
         {menuList.map((menu) => (
           <Link key={menu} href={menu}>
@@ -16,7 +16,7 @@ const Navbar : React.FC = () => {
               {menu !== '/' 
                 ? <span>{menu}</span>
                 : (
-                  <img src="/images/navbar/wowmen-logo.png" />
+                  <img src="/images/navbar/wowmenLogo.png" />
                 )}
             </a>
           </Link>

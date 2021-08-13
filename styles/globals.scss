@@ -6,6 +6,8 @@
 // Component Styling
 @import './components/navbar.scss';
 @import './components/product-card.scss';
+@import './components/trinkets.scss';
+@import './components/order-form.scss';
 
 // Page Styling
 @import './pages/shop.scss';
@@ -40,4 +42,9 @@ img {
   &.pt {
     padding-top: 135px;
   }
+}
+
+.helper-text {
+  color: $magenta;
+  margin-left: 12px;
 }

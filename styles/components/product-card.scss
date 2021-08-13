@@ -103,7 +103,7 @@
 
   @media (max-width: 768px) {
     width: 160px;
-    height: 248px;
+    height: 246px;
     padding: 8px;
 
     &-detail {
@@ -111,7 +111,7 @@
     }
 
     &-name {
-      font-size: 10px;
+      font-size: 12px;
       padding: 2px 4px;
     }
 
@@ -120,12 +120,12 @@
     }
 
     &-price {
-      font-size: 10px;
+      font-size: 11px;
     }
 
     &-category {
       .value {
-        font-size: 9px;
+        font-size: 10px;
         padding: 2px 4px;
       }
 
@@ -146,7 +146,7 @@
       }
 
       .value {
-        font-size: 12px;
+        font-size: 13px;
         margin: 0 6px;
       }
     }

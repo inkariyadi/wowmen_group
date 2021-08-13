@@ -1,0 +1,190 @@
+.order-form {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $vanillalatte;
+  border-radius: 60px;
+  width: 450px;
+  position: relative;
+  z-index: 10;
+
+  @media (max-width: 1337px) {
+    flex-direction: row;
+    width: auto;
+    margin: -16px;
+    align-items: flex-start;
+    margin: 0;
+
+    &-summary, &-input {
+      padding: 16px;
+      flex: 0 0 50%;
+    }
+
+    &-summary {
+      h6 {
+        margin: 0 0 24px !important;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 900px) {
+    padding: 0;
+    margin: -12px;
+    padding: 16px;
+
+    &-summary, &-input {
+      padding: 12px;
+
+      input {
+        font-size: 12px;
+        margin: 6px 0 12px !important;
+      }
+    }
+
+    &-summary {
+      flex-grow: 1;
+      h6 {
+        margin: 0 0 12px !important;
+      }
+
+      table {
+        span {
+          padding: 4px !important;
+          font-size: 10px;
+        }
+      }
+    }
+
+    &-input{
+      flex: 0 0 40%;
+    }
+
+    hr {
+      margin: 8px 0 !important;
+    }
+  }
+
+  label {
+    min-width: 150px;
+    padding: 5px 10px;
+    background-color: $pink-tipes;
+    color: $myblue;
+    box-shadow: $shadow;
+    border-radius: 90px;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 4px;
+    border-bottom: 2px solid $pink-tipes;
+    margin: 12px 0 36px;
+    font-size: 18px;
+    z-index: 2;
+    background: none;
+  }
+
+  h6 {
+    color: $dark-blue;
+    margin: 24px 0;
+  }
+
+  table {
+    width: 100%;
+
+    td {
+      text-align: center;
+      font-size: 12px;
+
+      @media (min-width: 769px) {
+        font-size: 14px;
+      }
+
+      hr {
+        background-color: $pink-tipes;
+        height: 2px;
+        margin: 24px 0;
+        border: none;
+      }
+    }
+  }
+
+  &-column {
+    margin: 2px auto;
+    padding: 4px 12px;
+    background-color: $pink-tipes;
+    color: $myblue;
+    font-size: 18px;
+    border-radius: 90px;
+  }
+
+  &-input {
+    margin-bottom: 12px;
+  }
+
+  &-list {
+    min-height: 50px;
+    display: inline-block;
+  }
+
+  &-summary {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-total {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span {
+      display: inline-block;
+      margin: 10px 0 20px;
+      font-size: 16px;
+    }
+
+    h6 {
+      margin: 0;
+    }
+  }
+
+  .checkout-btn {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: $jeruksaya;
+    padding: 4px 16px;
+    border: none;
+    font-weight: 600;
+    color: white;
+    outline: none;
+    border-radius: 90px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 900px) {
+    label, span {
+      font-size: 12px !important;
+    }
+
+    .checkout-btn {
+      font-size: 14px;
+    }
+
+    &-total {
+      span {
+        font-size: 14px !important;
+        font-weight: 500;
+      }
+    }
+  }
+}
