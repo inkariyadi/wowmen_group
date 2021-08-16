@@ -279,6 +279,14 @@
             @media screen and (max-width: 480px) {
                 flex-direction: row;
             }
+            &-items:nth-child(2){
+                @media screen and (max-width: 480px) {
+                    margin-left: -5vw;
+                }
+                @media screen and (max-width: 380px) {
+                    margin-left: -15vw;
+                }
+            }
             &-items{
                 display: flex;
                 flex-wrap: wrap;
@@ -289,7 +297,7 @@
                     row-gap: 30vh;
                 }
                 @media screen and (max-width: 380px) {
-                    row-gap: 20vh;
+                    row-gap: 25vh;
                 }
             }
         }
