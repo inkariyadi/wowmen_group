@@ -11,15 +11,16 @@
 
 // Page Styling
 @import './pages/shop.scss';
+@import './pages/homepage.scss';
 
 
 html,
-body, 
-* {
+body{
   padding: 0;
   margin: 0;
   font-family: $primary-font;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 a {
