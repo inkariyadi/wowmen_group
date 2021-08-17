@@ -8,8 +8,6 @@ function Home() {
     <>
       <Head>
         <title>Wowmen Academy | Home Page</title>
-        <meta name="description" content="Wowmen is blablablablabla" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar/>
       <div className="home-page">
@@ -38,13 +36,13 @@ function Home() {
         </div>
         <div className="home-page-third">
           <h1>ini buat socmed</h1>
-          <div className="socmed-wrapper">
-            <div className="socmed-wrapper-items">
+          <div className="home-page-third-socmed">
+            <div className="home-page-third-socmed-items">
               <RoundedRectangle type="pink-square" />
               <RoundedRectangle type="pink-square" />
               <RoundedRectangle type="pink-square" />
             </div>
-            <div className="socmed-wrapper-items">
+            <div className="home-page-third-socmed-items">
               <RoundedRectangle type="green-rectangle" />
               <RoundedRectangle type="green-rectangle" />
             </div>
