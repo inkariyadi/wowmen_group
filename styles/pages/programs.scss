@@ -1,4 +1,9 @@
 .program {
+
+  & * {
+    box-sizing: border-box;
+  }
+  
   &-first {
     background-color: $greentea;
     flex-direction: column;

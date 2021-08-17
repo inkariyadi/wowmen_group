@@ -1,4 +1,9 @@
 .shop {
+
+  & * {
+    box-sizing: border-box;
+  }
+
   &-first {
     background-color: $banana;
     min-height: 0 !important;

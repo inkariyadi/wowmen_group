@@ -52,7 +52,7 @@ const Shop: React.FC = () => {
   });
 
   return (
-    <>
+    <div className="shop">
       <Navbar />
       <section className="shop-first section-container pt">
         <div className="its-time">
@@ -147,13 +147,13 @@ const Shop: React.FC = () => {
           <div className="our-merchandise-right">
             <OrderForm
               productList={[firstLocal, secondLocal].filter(({ num }) => num > 0)}
-              orderData={merchData}
-              setOrderData={setMerchData}
+              orderData={localData}
+              setOrderData={setLocalData}
             />
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
