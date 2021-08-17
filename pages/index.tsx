@@ -8,8 +8,6 @@ function Home() {
     <>
       <Head>
         <title>Wowmen Academy | Home Page</title>
-        <meta name="description" content="Wowmen is blablablablabla" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar/>
       <div className="home-page">
