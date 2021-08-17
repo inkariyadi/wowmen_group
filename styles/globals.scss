@@ -1,6 +1,6 @@
 // Basic styling
 @import './fonts.scss';
-@import './colors.scss';
+@import './variables.scss';
 @import './typography.scss';
 
 // Component Styling
@@ -11,6 +11,7 @@
 
 // Page Styling
 @import './pages/shop.scss';
+@import './pages/programs.scss';
 
 
 html,

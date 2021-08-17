@@ -36,6 +36,16 @@
       font-size: clamp(11px, 2vw, 24px);
       font-weight: 500;
 
+      span {
+        display: inline-block;
+        transition: all .5s;
+
+        &:hover {
+          text-decoration: underline;
+          transform: scale(1.2);
+        }
+      }
+
       @media (min-width: 1280px) {
         justify-content: center;
       }
