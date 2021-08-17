@@ -1,5 +1,6 @@
 // Import Modules
 import React, { useState} from 'react';
+import Head from 'next/head';
 
 // Import Components
 import Navbar from 'components/Navbar';
@@ -11,7 +12,7 @@ import OrderForm from 'components/OrderForm';
 import Product from 'interface/Product';
 import OrderData from 'interface/OrderData';
 
-const Shop: React.FC = () => {
+function Shop () {
   const [firstMerch, setFirstMerch] = useState<Product>({
     name: 'Merch 1',
     num: 0,
@@ -53,6 +54,9 @@ const Shop: React.FC = () => {
 
   return (
     <>
+      <Head>
+        <title>Wowmen Academy | Shop</title>
+      </Head>
       <Navbar />
       <section className="shop-first section-container pt">
         <div className="its-time">
@@ -155,6 +159,6 @@ const Shop: React.FC = () => {
       </section>
     </>
   );
-};
+}
 
 export default Shop;

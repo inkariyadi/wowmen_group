@@ -1,0 +1,301 @@
+.about{
+    background-color: $jeruksaya;
+    &-top{
+        color: $vanillalatte;
+        padding: 15vh 10vw;
+        &-desc{
+            position: relative;
+            z-index: 2;
+            top: -30vh;
+            margin-bottom: -30vh;
+            & > h1{
+                &:nth-child(1){
+                    font-weight: 500;
+                }
+                &:nth-child(2){
+                    font-weight: 700;
+                    background-color: $greentea;
+                    padding: 0% 2%;
+                    display: inline-block;
+                    transform: rotate(0.53deg);
+                }
+                font-size: 35px;
+                @media screen and (min-width: 320px) {
+                    font-size: calc(35px + (100 - 35) * ((100vw - 320px) / 880));
+                }
+                @media screen and (min-width: 1200px) {
+                    font-size: 100px;
+                }
+            }
+            & > p{
+                font-size: 15px;
+                max-width: 60vw;
+                padding-top: 5vh;
+                @media screen and (min-width: 320px) {
+                    font-size: calc(15px + (25 - 15) * ((100vw - 320px) / 880));
+                }
+                @media screen and (min-width: 1200px) {
+                    font-size: 25px;
+                }
+            }
+        }
+        & > img{
+            position: relative;
+            left: 33vw;
+            top: 8vh;
+            z-index: 1;
+        }
+    }
+    &-second{
+        padding: 10vh 0;
+        background-color: $miniblue;
+        text-align: center;
+        &-content{
+            display: grid;
+            padding: 5vh 15vw 0;
+            grid-template-columns: max-content 1fr;
+            align-items: center;
+            gap: 5vw;
+            position: relative;
+            top: -100vh;
+            margin-bottom: -80vh;
+            & > p{
+                font-size: 15px;
+                text-align: left;
+                @media screen and (min-width: 320px) {
+                    font-size: calc(15px + (19 - 15) * ((100vw - 320px) / 880));
+                }
+                @media screen and (min-width: 1200px) {
+                    font-size: 19px;
+                }
+            }
+            &-title{
+                margin-top: 5vh;
+                margin-bottom: -10vh;
+                & > h1:nth-child(1){
+                    position: relative;
+                    z-index: 2;
+                    font-weight: 700;
+                    font-size: 35px;
+                    color: $banana;
+                    background-color: $pinkyboy;
+                    padding: 0 4%;
+                    left: 8vw;
+                    display: inline-block;
+                    transform: rotate(20deg);
+                    @media screen and (min-width: 320px) {
+                        font-size: calc(35px + (100 - 35) * ((100vw - 320px) / 880));
+                    }
+                    @media screen and (min-width: 1200px) {
+                        font-size: 100px;
+                    }
+                }
+                & > h1:nth-child(2){
+                    position: relative;
+                    z-index: 2;
+                    font-weight: 700;
+                    font-size: 35px;
+                    color: $greentea;
+                    @media screen and (min-width: 320px) {
+                        font-size: calc(35px + (100 - 35) * ((100vw - 320px) / 880));
+                    }
+                    @media screen and (min-width: 1200px) {
+                        font-size: 100px;
+                    }
+                }
+                & > p{
+                    position: relative;
+                    z-index: 1;
+                    top: -12vh;
+                    left: -6vw;
+                    font-size: 30px;
+                    color: $greentea;
+                    font-family: $ternary-font;
+                    background-image: url('/images/about/left-star.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: auto;
+                    padding: 10vh 0;
+                    margin: 0;
+                    @media screen and (min-width: 320px) {
+                        font-size: calc(30px + (70 - 30) * ((100vw - 320px) / 880));
+                    }
+                    @media screen and (min-width: 1200px) {
+                        font-size: 70px;
+                    }
+                }
+                & > h1:nth-child(4){
+                    position: relative;
+                    z-index: 2;
+                    margin-top: -35vh;
+                    margin-left: 15vw;    
+                    font-weight: 500;
+                    font-size: 37px;
+                    color: $greentea;
+                    @media screen and (min-width: 320px) {
+                        font-size: calc(37px + (120 - 37) * ((100vw - 320px) / 880));
+                    }
+                    @media screen and (min-width: 1200px) {
+                        font-size: 120px;
+                    }
+                }
+                & > img{
+                    position: relative;
+                    z-index: 1;
+                    top: -42vh;
+                    left: 13vw;
+                }
+            }
+        }
+    }
+    &-third{
+        padding: 10vh 10vw;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        &-title{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            padding-bottom: 20vh;
+            & > .triangle-up{
+                width: 0;
+                height: 0;
+                border-left: 25px solid transparent;
+                border-right: 25px solid transparent;
+                border-bottom: 50px solid $pinkyboy;
+            }
+            & > h2{
+                font-weight: 500;
+                font-size: 20px;
+                color: $vanillalatte;
+                padding: 0 2vw;
+                @media screen and (min-width: 320px) {
+                    font-size: calc(20px + (60 - 20) * ((100vw - 320px) / 880));
+                }
+                @media screen and (min-width: 1200px) {
+                    font-size: 60px;
+                }
+            }
+        }
+        &-pilars{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto 10vh;
+            gap: 10vw;
+            &-item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                & > p{
+                    font-weight: 300;
+                    font-size: 10px;
+                    color: $cappuccino;
+                    font-family: $primary-font;
+                    @media screen and (min-width: 320px) {
+                        font-size: calc(10px + (20 - 10) * ((100vw - 320px) / 880));
+                    }
+                    @media screen and (min-width: 1200px) {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        &-products{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            gap: 15vw;
+            &-item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                & > p{
+                    font-weight: 300;
+                    font-size: 10px;
+                    color: $cappuccino;
+                    font-family: $primary-font;
+                    @media screen and (min-width: 320px) {
+                        font-size: calc(10px + (40 - 10) * ((100vw - 320px) / 880));
+                    }
+                    @media screen and (min-width: 1200px) {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+    }
+    &-last{
+        padding: 10vh 5vw;
+        display: flex;
+        background-color: $cappuccino;
+        flex-direction: column;
+        &-title{
+            display: flex;
+            & > h2{
+                font-weight: 500;
+                font-size: 35px;
+                color: $greentea;
+                @media screen and (min-width: 320px) {
+                    font-size: calc(35px + (120 - 35) * ((100vw - 320px) / 880));
+                }
+                @media screen and (min-width: 1200px) {
+                    font-size: 120px;
+                }
+            }
+        }
+        &-content{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            gap: 5vw;
+            &-item{
+                display: flex;
+                flex-direction: column;
+                font-family: $secondary-font;
+                align-items: center;
+                justify-content: flex-end;
+                > img{
+                    width: 100%;
+                    padding: 5vh 0;
+                }
+                > h6{
+                    font-weight: 700;
+                    font-size: 7px;
+                    color: $myblue;
+                    @media screen and (min-width: 320px) {
+                        font-size: calc(7px + (13 - 7) * ((100vw - 320px) / 880));
+                    }
+                    @media screen and (min-width: 1200px) {
+                        font-size: 13px;
+                    }
+                }
+                > p{
+                    font-weight: 400;
+                    font-size: 7px;
+                    max-width: 200px;
+                    @media screen and (min-width: 320px) {
+                        font-size: calc(7px + (13 - 7) * ((100vw - 320px) / 880));
+                    }
+                    @media screen and (min-width: 1200px) {
+                        font-size: 13px;
+                    }
+                }
+                &-position{
+                    color: $myblue;
+                }
+                &-desc{
+                    font-family: $primary-font;
+                }
+                &:hover{
+                    cursor: pointer;
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+    }
+}

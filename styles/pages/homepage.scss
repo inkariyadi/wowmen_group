@@ -1,7 +1,3 @@
-@import '../colors.scss';
-@import '../fonts.scss';
-@import '../components/rounded-rectangle.scss';
-
 .home-page{
     background-color: $pinkyboy;
     &-landing{
@@ -9,13 +5,13 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        .top{
+        & > .top{
             text-align: center;
             padding: 15vh 0 0;
             @media (max-width: 1200px) {
                 padding: 100px 0 2.5vh;
             }
-            img{
+            & > img{
                 width: 15%;
                 @media (max-width: 1024px) {
                     width: 14%;
@@ -25,11 +21,11 @@
                 }
             }
         }
-        .middle{
+        & > .middle{
             margin: -3vh 0 0 ;
             display: flex;
             justify-content: center;
-            img:nth-child(1){
+            & > img:nth-child(1){
                 position: relative;
                 left: 38vw;
                 z-index: 1;
@@ -51,7 +47,7 @@
                     width: 70%;
                 }
             }
-            img:nth-child(2){
+            & > img:nth-child(2){
                 position: relative;
                 left: 31vw;
                 top: 8vh;
@@ -72,7 +68,7 @@
                     width: 45%;
                 }
             }
-            img:nth-child(3){
+            & > img:nth-child(3){
                 position: relative;
                 left: 9vw;
                 top: 12vh;
@@ -94,7 +90,7 @@
                     top: 10vh;
                 }
             }
-            h1{
+            & > h1{
                 font-weight: 900;
                 font-size: 64px;
                 position: relative;
@@ -122,7 +118,7 @@
                     top: 0;
                 }
             }
-            h3{
+            & > h3{
                 font-family: $secondary-font;
                 font-weight: 400;
                 font-size: 48px;
@@ -168,7 +164,7 @@
             @media (max-width: 480px) {
                 margin: -10vh 0 40vh -80vw;
             }
-            img:nth-child(1){
+            & > img:nth-child(1){
                 position: relative;
                 right: -4vw;
                 width: 17%;
@@ -184,7 +180,7 @@
                     transform: rotate(31.69deg);
                 }
             }
-            h2{
+            & > h2{
                 font-weight: 900;
                 font-size: 60px;
                 color: $cappuccino;
@@ -208,7 +204,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        img:nth-child(1){
+        & > img:nth-child(1){
             align-self: flex-end;
             width: 50%;
             @media (max-width: 768px) {
@@ -219,10 +215,10 @@
                 width: 70%;
             }
         }
-        .description{
+        & > .description{
             margin-top: -10vh;
             padding-right: 6vw;
-            h1{
+            & > h1{
                 font-weight: 900;
                 font-size: 55px;
                 color: $cappuccino;
@@ -234,7 +230,7 @@
                     font-size: 96px;
                 }
             }   
-            p{
+            & > p{
                 font-family: $secondary-font;
                 font-weight: 400;
                 font-size: 18px;
@@ -260,7 +256,7 @@
         padding: 15vh 6vw;
         background-color: $cappuccino;
         height: 100%;
-        h1{
+        & > h1{
             font-weight: 900;
             color: $myblue;
             font-size: 48px;
@@ -272,7 +268,7 @@
                 font-size: 96px;
             }
         }
-        .socmed-wrapper{
+        &-socmed{
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -307,7 +303,7 @@
         padding: 15vh 6vw 10vh;
         background-color: $pinkyboy;
         height: 100%;
-        h1{
+        & > h1{
             font-weight: 900;
             color: $myblue;
             font-size: 48px;
@@ -319,7 +315,7 @@
                 font-size: 96px;
             }
         }
-        .partner-wrapper{
+        & > .partner-wrapper{
             display: flex;
             flex-wrap: wrap;
             gap: 2vw;
@@ -331,7 +327,7 @@
         position: relative;
         background-color: $pinkyboy;
         overflow: hidden;
-        img{
+        & > img{
             width: 100vw;
             margin-bottom: -1vw;
         }
