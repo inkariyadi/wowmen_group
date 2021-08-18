@@ -45,6 +45,16 @@ const OrderForm : React.FC<Props> = (props) => {
       else setEmailHelper('');
     } else setEmailHelper('');
   }, [email]);
+  
+  const countTotal = () => {
+    let total = 0;
+    
+    productList.forEach((value)=>{
+      total+=value.price * value.num;
+    });
+    
+    return total;
+  };
 
   return (
     <div className="order-form">
@@ -74,7 +84,7 @@ const OrderForm : React.FC<Props> = (props) => {
             </tr>
             {productList.map((product: Product, idx: number) => (
               <tr key={idx}>
-                <td>{idx}</td>
+                <td>{idx+1}</td>
                 <td>{product.name}</td>
                 <td>
                   <NumberFormat
@@ -106,7 +116,7 @@ const OrderForm : React.FC<Props> = (props) => {
           <h6>Total</h6>
           <NumberFormat
             displayType="text"
-            value={0}
+            value={countTotal()}
             prefix="Rp"
             decimalSeparator=","
             thousandSeparator="."
