@@ -1,10 +1,10 @@
 .product-card {
-  width: 300px;
+  width: 285px;
   height: 450px;
   border-radius: 25px;
   background-color: $pink-tipes;
   position: relative;
-  padding: 17px;
+  padding: 15px;
 
   &-image {
     width: 100%;
@@ -102,8 +102,8 @@
   }
 
   @media (max-width: 768px) {
-    width: 160px;
-    height: 246px;
+    width: clamp(160px, 30vw, 285px);
+    height: clamp(246px, 45vw, 450px);
     padding: 8px;
 
     &-detail {

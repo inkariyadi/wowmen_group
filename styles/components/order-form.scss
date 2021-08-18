@@ -5,11 +5,11 @@
   align-items: flex-start;
   background-color: $vanillalatte;
   border-radius: 60px;
-  width: 450px;
+  width: 420px;
   position: relative;
   z-index: 10;
 
-  @media (max-width: 1337px) {
+  @media (max-width: 1365px) {
     flex-direction: row;
     width: auto;
     margin: -16px;

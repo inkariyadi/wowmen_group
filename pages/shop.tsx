@@ -1,6 +1,8 @@
 // Import Modules
 import React, { useState} from 'react';
+import Carousel from 'react-material-ui-carousel';
 import Head from 'next/head';
+import { ArrowForwardIos, ArrowBackIos } from '@material-ui/icons';
 
 // Import Components
 import Navbar from 'components/Navbar';
@@ -11,6 +13,27 @@ import OrderForm from 'components/OrderForm';
 // Import Interface
 import Product from 'interface/Product';
 import OrderData from 'interface/OrderData';
+
+const carouselProps = (color: string) => ({
+  stopAutoPlayOnHover: true,
+  indicators: false,
+  navButtonsWrapperProps: {
+    style: {
+      top: -8,
+    },
+  },
+  navButtonsAlwaysVisible: true,
+  navButtonsProps: {
+    style: {
+      backgroundColor: color,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  },
+  PrevIcon: <ArrowBackIos className="nav-btn" />,
+  NextIcon: <ArrowForwardIos className="nav-btn" />,
+});
 
 function Shop () {
   const [firstMerch, setFirstMerch] = useState<Product>({
@@ -78,26 +101,28 @@ function Shop () {
           <Trinkets />
           <h4>Our <br /> Merhandise</h4>
           <div className="our-merchandise">
-            <div className="our-merchandise-left">
-              <div>
-                <ProductCard
-                  name={firstMerch.name}
-                  num={firstMerch.num}
-                  price={firstMerch.price}
-                  category={firstMerch.category}
-                  setProduct={setFirstMerch}
-                />
+            <Carousel { ...carouselProps('rgba(9, 13, 84, .4)') }>
+              <div className="our-merchandise-left">
+                <div className="our-merchandise-left-item">
+                  <ProductCard
+                    name={firstMerch.name}
+                    num={firstMerch.num}
+                    price={firstMerch.price}
+                    category={firstMerch.category}
+                    setProduct={setFirstMerch}
+                  />
+                </div>
+                <div className="our-merchandise-left-item">
+                  <ProductCard
+                    name={secondMerch.name}
+                    num={secondMerch.num}
+                    price={secondMerch.price}
+                    category={secondMerch.category}
+                    setProduct={setSecondMerch}
+                  />
+                </div>
               </div>
-              <div>
-                <ProductCard
-                  name={secondMerch.name}
-                  num={secondMerch.num}
-                  price={secondMerch.price}
-                  category={secondMerch.category}
-                  setProduct={setSecondMerch}
-                />
-              </div>
-            </div>
+            </Carousel>
             <div className="our-merchandise-right">
               <OrderForm
                 productList={[firstMerch, secondMerch].filter(({ num }) => num > 0)}
@@ -128,26 +153,30 @@ function Shop () {
             <div className="our-merchandise-left">
               <img className="kwetiau-img" src="/images/shop/kwetiau-img.png" alt="kwetiau"/>
               <img className="kwetiau-img" src="/images/shop/kwetiau-img.png" alt="kwetiau"/>
-              <div>
-                <ProductCard
-                  secondary
-                  name={firstLocal.name}
-                  num={firstLocal.num}
-                  price={firstLocal.price}
-                  category={firstLocal.category}
-                  setProduct={setFirstLocal}
-                />
-              </div>
-              <div>
-                <ProductCard
-                  secondary
-                  name={secondLocal.name}
-                  num={secondLocal.num}
-                  price={secondLocal.price}
-                  category={secondLocal.category}
-                  setProduct={setSecondLocal}
-                />
-              </div>
+              <Carousel { ...carouselProps('rgba(226, 142, 181, .4)') }>
+                <div className="our-merchandise-left">
+                  <div className="our-merchandise-left-item">
+                    <ProductCard
+                      secondary
+                      name={firstLocal.name}
+                      num={firstLocal.num}
+                      price={firstLocal.price}
+                      category={firstLocal.category}
+                      setProduct={setFirstLocal}
+                    />
+                  </div>
+                  <div className="our-merchandise-left-item">
+                    <ProductCard
+                      secondary
+                      name={secondLocal.name}
+                      num={secondLocal.num}
+                      price={secondLocal.price}
+                      category={secondLocal.category}
+                      setProduct={setSecondLocal}
+                    />
+                  </div>
+                </div>
+              </Carousel>
             </div>
             <div className="our-merchandise-right">
               <OrderForm
