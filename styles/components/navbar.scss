@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 10%;
+    padding: 0 18%;
     padding-bottom: 0;
 
     @media (max-width: 768px) {
@@ -54,7 +54,7 @@
       &:last-child {
         justify-content: center;
       }
-
+      
       img {
         width: clamp(40px, 65%, 120px);
       }

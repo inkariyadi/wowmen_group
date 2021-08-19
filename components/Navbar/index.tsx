@@ -13,11 +13,18 @@ const Navbar : React.FC = () => {
         {menuList.map((menu) => (
           <Link key={menu} href={menu}>
             <a className="menu-list">
-              {menu !== '/' 
-                ? <span>{menu}</span>
-                : (
-                  <img src="/images/navbar/wowmenLogo.png" />
-                )}
+              {menu === '/' 
+                ? 
+                (
+                  <img style={{ width: 'clamp(30px, 25%, 120px)' }} src="/images/navbar/home.svg" />
+                ) 
+                : (menu === 'wowmen-academy')
+                  ?
+                  (
+                    <img src="/images/navbar/wowmenLogo.png" />
+                  )
+                  :
+                  <span>{menu}</span>}
             </a>
           </Link>
         ))}

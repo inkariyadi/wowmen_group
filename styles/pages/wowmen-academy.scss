@@ -1,0 +1,15 @@
+.wowmen{
+    background-color: $fanta;
+    padding: 15vh 0 0;
+    &-top{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: $poppins-font;
+        & > p{
+            color: $vanilla;
+            font-weight: 300;
+            font-size: clamp(15px, 2vw, 30px);
+        }
+    }
+}

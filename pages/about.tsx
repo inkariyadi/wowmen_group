@@ -15,31 +15,28 @@ function About () {
     {src: 'images/about/instagram.svg', name: 'instagram'},
     {src: 'images/about/program.svg', name: 'programs'},
   ];
+  const [hoverIdx, setHoverIdx] = useState(-1);
+
+  // dummy data
   const [teams, setTeams] = useState([
     {
-      hover: false,
       src: 'images/about/ceo-1.svg', 
       name: 'Syahrani Thomasri', 
       position: 'Founder & CEO of Wowmen Group (Lead of Wowmen Group Media)',
       desc: 'Hi! I am Caca. I am currently a student at School of Business and Management ITB and Hull University UK, majoring in International Business and Financial Management. I am very passionate about education and learning is inevitable for me. I tried to create a better platform of learning in Indonesia, therefore I and my team created several businesses and communities in that area, which are Wowmen Group and Logika Creative. I also Co-founded Mimpi Muda when she was in High School that aimed to give Jakarta’s youths a platform to share their thoughts regarding education and social issues.I am also the senior copywriter of Relearn Indonesia. I have my own vision for herself and the people around her, therefore She’s become very ambitious to create a better and better platform for Indonesia.',
     },
     {
-      hover: false,
       src: 'images/about/ceo-2.svg', 
       name: 'Moza Abel', 
       position: 'Co-Founder & Co-CEO Wowmen Group (Lead of Wowmen Academy)',
       desc: 'Hello, I\'m Abel, an undergraduate student majoring in Management at the University of Indonesia. I\'m a passionate learner that likes to explore new things and develop myself both personally and professionally. Being a part of Wowmen Group from the start was one of the best decisions I\'ve ever made. Building Wowmen Group together with other great women enhances my willingness to learn and grow with them. Currently, we also building Wowmen Academy, which hopefully can also develop and educate people through the contents and programs that we have.',
     },
   ]);
-  const onHover = (index: any) => {
-    const list = [...teams];
-    list[index].hover = true;
-    setTeams(list);
+  const onHover = (index: number) => {
+    setHoverIdx(index);
   };
-  const onLeave = (index: any) => {
-    const list = [...teams];
-    list[index].hover = false;
-    setTeams(list);
+  const onLeave = () => {
+    setHoverIdx(-1);
   };
   return(
     <>
@@ -101,13 +98,13 @@ function About () {
           </div>
           <div className="about-last-content">
             {/* TODO: change with real data */}
-            {teams.map(({ src, name, position, desc, hover }, i) => (
+            {teams.map(({ src, name, position, desc }, i) => (
               <div 
                 key={name} 
                 className="about-last-content-item"
                 onMouseEnter={e => onHover(i)}
-                onMouseLeave={e => onLeave(i)}>
-                {hover?
+                onMouseLeave={onLeave}>
+                {hoverIdx==i?
                   <p className="about-last-content-item-desc">{desc}</p>
                   :
                   <img src={src} alt={name}/>
