@@ -11,6 +11,9 @@
 
   &-first {
     flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $bluesky;
     padding: 5%;
     padding-top: 20vh;
@@ -113,7 +116,7 @@
         justify-content: center;
         min-height: 300px;
         margin-top: 30px;
-        font-size: clamp(20px, 4vw, 26px);
+        font-size: clamp(18px, 2vw, 32px);
         letter-spacing: .25px;
         line-height: 1.5;
       }
@@ -151,6 +154,9 @@
 
   &-second {
     flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $pink-uhuy;
     margin-top: -6.25vw;
     justify-content: flex-start !important;
@@ -275,6 +281,7 @@
         background-color: $cappuccino;
         width: 100%;
         padding: clamp(20px, 2.5%, 40px);
+        padding-bottom: 8vh;
         border-radius: 36px;
 
         @media (max-width: 768px) {
@@ -288,7 +295,7 @@
       }
 
       &-text {
-        font-size: clamp(18px, 3vw, 26px);
+        font-size: clamp(18px, 2vw, 35px);
         line-height: 2;
         text-decoration: underline;
         text-decoration-color: $bluesky;
@@ -373,6 +380,9 @@
   &-fourth {
     background-color: $jeruksaya;
     flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     padding: 10vh 0;
 
@@ -405,8 +415,10 @@
       }
 
       &-box {
-        margin-top: 8vh;
+        margin: 8vh auto 0;
         padding: 0 5%;
+        max-width: 1366px;
+
 
         @media (max-width: 768px) {
           margin-top: 4vh;
