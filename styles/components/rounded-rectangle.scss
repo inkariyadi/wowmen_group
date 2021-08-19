@@ -1,3 +1,16 @@
+.rounded-rectangle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        cursor: pointer;
+    }
+    &-image{
+        display: block;
+        margin: auto;
+    }
+}
+
 .pink-square{
     background: $pinkyboy;
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);

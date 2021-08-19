@@ -3,22 +3,24 @@ import React from 'react';
 
 interface Props {
     type: ('pink-square' | 'green-rectangle' | 'yellow-circle-large' | 'yellow-circle-medium' | 'yellow-circle-small'),
-    imageSRC?: 'images/about/ceo-1.svg',
-    imageALT?: 'gambar',
-    href?: '/',
+    imageSRC?: string,
+    imageALT?: string,
+    href?: string,
 }
 
 const RoundedRectangle : React.FC<Props> = (props) => {
   const{
     type,
-    imageSRC,
-    imageALT,
-    href,
+    imageSRC = 'images/about/ceo-1.svg',
+    imageALT = 'gambar',
+    href = '/',
   } = props;
 
+  const styling = `rounded-rectangle ${type}`;
+
   return(
-    <a className={type} href={href}>
-      <img src={imageSRC} alt={imageALT}/>
+    <a className={styling} href={href}>
+      <img className="rounded-rectangle-image" src={imageSRC} alt={imageALT}/>
     </a>
   );
 };
