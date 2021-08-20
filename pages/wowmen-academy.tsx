@@ -9,14 +9,14 @@ function About () {
     {src: 'images/wowmenAcademy/small-white-star.svg', alt: 'small white star'},
     {src: 'images/wowmenAcademy/red-slayer.svg', alt: 'red slayer'},
     {src: 'images/wowmenAcademy/white-wave.svg', alt: 'white wave'},
-    {src: 'images/wowmenAcademy/orange-star.svg', alt: 'orange star'},
     {src: 'images/wowmenAcademy/outlined-rounded-star.svg', alt: 'outlined rounded star'},
+    {src: 'images/wowmenAcademy/orange-star.svg', alt: 'orange star'},
     {src: 'images/wowmenAcademy/wowmen-logo.svg', alt: 'wowmen logo'},
     {src: 'images/wowmenAcademy/blue-ellipse.svg', alt: 'blue ellipse'},
     {src: 'images/wowmenAcademy/yellow-ellipse.svg', alt: 'yellow ellipse'},
     {src: 'images/wowmenAcademy/green-star.svg', alt: 'green star'},
-    {src: 'images/wowmenAcademy/big-white-star.svg', alt: 'big white star'},
     {src: 'images/wowmenAcademy/blue-rounded-star.svg', alt: 'blue rounded star'},
+    {src: 'images/wowmenAcademy/big-white-star.svg', alt: 'big white star'},
   ];
   return(
     <>
@@ -30,10 +30,10 @@ function About () {
           {landingAset.map(({src, alt}) => 
             alt === 'wowmen logo' ? 
               <div className="wowmen-top-logo">
-                <img key={alt} src={src} alt={alt}/>
+                <img className="wowmen-top-logo-img" key={alt} src={src} alt={alt}/>
               </div>
               :
-              <img key={alt} src={src} alt={alt}/>
+              <img className="wowmen-top-img" key={alt} src={src} alt={alt}/>
           )}
         </div>
         <div className="wowmen-second">
