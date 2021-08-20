@@ -2,14 +2,94 @@
     background-color: $fanta;
     padding: 15vh 0 0;
     &-top{
+        font-family: $poppins-font;
         align-items: center;
         justify-content: center;
         text-align: center;
-        font-family: $poppins-font;
         & > p{
             color: $vanilla;
             font-weight: 300;
             font-size: clamp(15px, 2vw, 30px);
+        }
+    }
+    &-second{
+        background-color: $vanilla;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        &-left{
+            &-logo{
+
+            }
+        }
+        &-right{
+            & > h1{
+                background-image: url('/images/wowmenAcademy/circle-scratch.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: auto;
+                font-weight: 900;
+                font-size: clamp(30px, 10vw, 80px);
+                color: $blueocean;
+                padding: 10vh 20vh;
+                font-family: $cooper-font;
+            }
+            & > p{
+                text-align: left;
+                background-image: url('/images/wowmenAcademy/desc-background.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: auto;
+                font-weight: 300;
+                font-size: clamp(15px, 8vw, 30px);
+                color: $vanilla;
+                padding: 20vh;
+                font-family: $poppins-font;
+            }
+        }
+    }
+    &-third{
+        display: flex;
+        background-color: $orenmalu;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15vh 5vw;
+    }
+    &-learning{
+        background-color: $ijolumut;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15vh 5vw;
+        &-content{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+        }
+        & > h1{
+            font-weight: 900;
+            font-size: clamp(30px, 30vw, 80px);
+            color: $vanilla;
+            font-family: $cooper-font;
+            margin-bottom: 10vh;
+        }
+    }
+    &-last{
+        display: flex;
+        background-color: $orenmalu;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        & > h1{
+            font-weight: 900;
+            font-size: clamp(20px, 5vw, 80px);
+            color: $birukematian;
+            font-family: $cooper-font;
         }
     }
 }
