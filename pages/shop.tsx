@@ -5,7 +5,6 @@ import Head from 'next/head';
 import { ArrowForwardIos, ArrowBackIos } from '@material-ui/icons';
 
 // Import Components
-import Navbar from 'components/Navbar';
 import ProductCard from 'components/ProductCard';
 import Trinkets from 'components/Trinkets';
 import OrderForm from 'components/OrderForm';
@@ -81,7 +80,6 @@ function Shop () {
         <title>Wowmen Academy | Shop</title>
       </Head>
       <div className="shop">
-        <Navbar />
         <section className="shop-first section-container pt">
           <div className="its-time">
             <h1 className="its-time-title">It&apos; s time</h1>

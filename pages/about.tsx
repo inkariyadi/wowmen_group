@@ -1,7 +1,6 @@
 // Import Modules
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Navbar from 'components/Navbar';
 
 function About () {
   const pilars = [
@@ -43,7 +42,6 @@ function About () {
       <Head>
         <title>Wowmen Academy | About Us</title>
       </Head>
-      <Navbar/>
       <div className="about">
         <div className="about-top">
           <img src="images/about/big-pink-yellow-flowers.svg" alt="big-pink-yellow-flowers" />

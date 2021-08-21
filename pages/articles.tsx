@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 
 // Import Components
-import Navbar from 'components/Navbar';
 import LifestyleCard from 'components/LifestyleArticle';
 
 // Import Interface
@@ -102,7 +101,6 @@ const Programs: React.FC = () => {
 
   return (
     <div className="article">
-      <Navbar />
       <section className="article-first section-container">
         <h3 className="top-article-title">
           Top Article

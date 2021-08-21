@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from 'components/Navbar';
 import RoundedRectangle from 'components/RoundedRectangle';
 
 function Home() {
@@ -9,7 +8,6 @@ function Home() {
       <Head>
         <title>Wowmen Academy | Home Page</title>
       </Head>
-      <Navbar/>
       <div className="home-page">
         <div className="home-page-landing">
           <div className="top">

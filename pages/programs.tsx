@@ -2,13 +2,11 @@
 import React from 'react';
 
 // Import Components
-import Navbar from 'components/Navbar';
 
  
 const Programs: React.SFC = () => {
   return (
     <div className="program">
-      <Navbar />
       <section className="program-first section-container">
         <div className="curcol-corner">
           <div className="circle-left" />

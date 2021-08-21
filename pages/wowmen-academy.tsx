@@ -1,7 +1,6 @@
 // Import Modules
 import React from 'react';
 import Head from 'next/head';
-import Navbar from 'components/Navbar';
 import LibraryCard from 'components/LibraryCard';
 
 function About () {
@@ -23,7 +22,6 @@ function About () {
       <Head>
         <title>Wowmen Academy | Wowmen Academy</title>
       </Head>
-      <Navbar/>
       <div className="wowmen">
         <div className="wowmen-top">
           <p>WOWMEN GROUP PROUDLY PRESENTS</p>
