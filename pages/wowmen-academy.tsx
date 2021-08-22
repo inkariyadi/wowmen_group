@@ -5,17 +5,26 @@ import LibraryCard from 'components/LibraryCard';
 
 function About () {
   const landingAset = [
-    {src: 'images/wowmenAcademy/small-white-star.svg', alt: 'small white star'},
-    {src: 'images/wowmenAcademy/red-slayer.svg', alt: 'red slayer'},
-    {src: 'images/wowmenAcademy/white-wave.svg', alt: 'white wave'},
-    {src: 'images/wowmenAcademy/outlined-rounded-star.svg', alt: 'outlined rounded star'},
-    {src: 'images/wowmenAcademy/orange-star.svg', alt: 'orange star'},
-    {src: 'images/wowmenAcademy/wowmen-logo.svg', alt: 'wowmen logo'},
-    {src: 'images/wowmenAcademy/blue-ellipse.svg', alt: 'blue ellipse'},
-    {src: 'images/wowmenAcademy/yellow-ellipse.svg', alt: 'yellow ellipse'},
-    {src: 'images/wowmenAcademy/green-star.svg', alt: 'green star'},
-    {src: 'images/wowmenAcademy/blue-rounded-star.svg', alt: 'blue rounded star'},
-    {src: 'images/wowmenAcademy/big-white-star.svg', alt: 'big white star'},
+    {styleName: 'wowmen-top-img wowmen-top-img-1', src: 'images/wowmenAcademy/small-white-star.svg', alt: 'small white star'},
+    {styleName: 'wowmen-top-img wowmen-top-img-2', src: 'images/wowmenAcademy/red-slayer.svg', alt: 'red slayer'},
+    {styleName: 'wowmen-top-img wowmen-top-img-3', src: 'images/wowmenAcademy/white-wave.svg', alt: 'white wave'},
+    {styleName: 'wowmen-top-img wowmen-top-img-4', src: 'images/wowmenAcademy/outlined-rounded-star.svg', alt: 'outlined rounded star'},
+    {styleName: 'wowmen-top-img wowmen-top-img-5', src: 'images/wowmenAcademy/orange-star.svg', alt: 'orange star'},
+    {styleName: 'wowmen-top-logo-img', src: 'images/wowmenAcademy/wowmen-logo.svg', alt: 'wowmen logo'},
+    {styleName: 'wowmen-top-img wowmen-top-img-6', src: 'images/wowmenAcademy/blue-ellipse.svg', alt: 'blue ellipse'},
+    {styleName: 'wowmen-top-img wowmen-top-img-7', src: 'images/wowmenAcademy/yellow-ellipse.svg', alt: 'yellow ellipse'},
+    {styleName: 'wowmen-top-img wowmen-top-img-8', src: 'images/wowmenAcademy/green-star.svg', alt: 'green star'},
+    {styleName: 'wowmen-top-img wowmen-top-img-9', src: 'images/wowmenAcademy/blue-rounded-star.svg', alt: 'blue rounded star'},
+    {styleName: 'wowmen-top-img wowmen-top-img-10', src: 'images/wowmenAcademy/big-white-star.svg', alt: 'big white star'},
+  ];
+  const secondAset = [
+    {styleName: 'wowmen-second-left-img wowmen-second-left-img-1', src: 'images/wowmenAcademy/sunset-three-circle.svg', alt: 'sunset three circle'},
+    {styleName: 'wowmen-second-left-img wowmen-second-left-img-2', src: 'images/wowmenAcademy/blue-ellipse-2.svg', alt: 'blue ellipse'},
+    {styleName: 'wowmen-second-left-img wowmen-second-left-img-3', src: 'images/wowmenAcademy/green-star-2.svg', alt: 'green star'},
+    {styleName: 'wowmen-second-left-logo-img', src: 'images/wowmenAcademy/logo-wowmen-academy.svg', alt: 'logo wowmen academy'},
+    {styleName: 'wowmen-second-left-img wowmen-second-left-img-4', src: 'images/wowmenAcademy/yellow-star.svg', alt: 'yellow star'},
+    {styleName: 'wowmen-second-left-img wowmen-second-left-img-5', src: 'images/wowmenAcademy/pink-diamond.svg', alt: 'pink diamond'},
+    {styleName: 'wowmen-second-left-img wowmen-second-left-img-6', src: 'images/wowmenAcademy/blue-peer.svg', alt: 'blue peer'},
   ];
   return(
     <>
@@ -25,26 +34,25 @@ function About () {
       <div className="wowmen">
         <div className="wowmen-top">
           <p>WOWMEN GROUP PROUDLY PRESENTS</p>
-          {landingAset.map(({src, alt}) => 
+          {landingAset.map(({src, alt, styleName}) => 
             alt === 'wowmen logo' ? 
               <div className="wowmen-top-logo">
-                <img className="wowmen-top-logo-img" key={alt} src={src} alt={alt}/>
+                <img className={styleName} key={alt} src={src} alt={alt}/>
               </div>
               :
-              <img className="wowmen-top-img" key={alt} src={src} alt={alt}/>
+              <img className={styleName} key={alt} src={src} alt={alt}/>
           )}
         </div>
         <div className="wowmen-second">
           <div className="wowmen-second-left">
-            <img src='images/wowmenAcademy/sunset-three-circle.svg' alt='sunset three circle' />
-            <img src='images/wowmenAcademy/blue-ellipse-2.svg' alt='blue ellipse' />
-            <img src='images/wowmenAcademy/green-star-2.svg' alt='green star' />
-            <div className="wowmen-second-logo">
-              <img src='images/wowmenAcademy/logo-wowmen-academy.svg' alt='logo wowmen academy' />
-            </div>
-            <img src='images/wowmenAcademy/yellow-star.svg' alt='yellow star' />
-            <img src='images/wowmenAcademy/pink-diamond.svg' alt='pink diamond' />
-            <img src='images/wowmenAcademy/blue-peer.svg' alt='blue peer' />
+            {secondAset.map(({src, alt, styleName}) => 
+              alt === 'logo wowmen academy' ? 
+                <div className="wowmen-second-left-logo">
+                  <img className={styleName} key={alt} src={src} alt={alt}/>
+                </div>
+                :
+                <img className={styleName} key={alt} src={src} alt={alt}/>
+            )}
           </div>
           <div className="wowmen-second-right">
             <h1>Introduction</h1>

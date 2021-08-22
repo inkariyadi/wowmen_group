@@ -2,12 +2,16 @@
     background-color: $jeruksaya;
     &-top{
         color: $vanillalatte;
-        padding: 15vh 10vw;
+        padding: 15vw 10vw;
         &-desc{
             position: relative;
             z-index: 2;
-            top: -30vh;
-            margin-bottom: -30vh;
+            top: -12vw;
+            margin-bottom: -15vw;
+            @media screen and (max-width: 768px) {
+                top: -8vw;
+                margin-bottom: 0;
+            }
             & > h1{
                 &:nth-child(1){
                     font-weight: 500;
@@ -19,37 +23,53 @@
                     display: inline-block;
                     transform: rotate(0.53deg);
                 }
-                font-size: 35px;
-                @media screen and (min-width: 320px) {
-                    font-size: calc(35px + (100 - 35) * ((100vw - 320px) / 880));
-                }
-                @media screen and (min-width: 1200px) {
-                    font-size: 100px;
-                }
+                font-size: clamp(35px, 10vw, 100px);
             }
             & > p{
-                font-size: 15px;
+                font-size: clamp(15px, 3vw, 25px);
                 max-width: 60vw;
-                padding-top: 5vh;
-                @media screen and (min-width: 320px) {
-                    font-size: calc(15px + (25 - 15) * ((100vw - 320px) / 880));
+                padding-top: 3vw;
+                @media screen and (max-width: 768px) {
+                    max-width: 70vw;
                 }
-                @media screen and (min-width: 1200px) {
-                    font-size: 25px;
+                @media screen and (max-width: 480px) {
+                    max-width: 80vw;
                 }
             }
         }
         & > img{
             position: relative;
             left: 33vw;
-            top: 8vh;
+            top: 8vw;
             z-index: 1;
+            width: 50%;
+            @media screen and (max-width: 1200px) {
+                width: 60%;
+            }
+            @media screen and (max-width: 768px) {
+                left: 20vw;
+                top: 20vw;
+                width: 75%;
+            }
+            @media screen and (max-width: 480px) {
+                left: 10vw;
+                top: 20vw;
+                width: 80%;
+            }
         }
     }
     &-second{
         padding: 10vh 0;
         background-color: $miniblue;
         text-align: center;
+        justify-content: center;
+        align-items: center;
+        & > img{
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                content: url('/images/about/about-bg-rotated.svg') !important;
+            }
+        }
         &-content{
             display: grid;
             padding: 5vh 15vw 0;
@@ -57,50 +77,67 @@
             align-items: center;
             gap: 5vw;
             position: relative;
-            top: -100vh;
-            margin-bottom: -80vh;
+            bottom: 800px;
+            // margin-bottom: -80vh;
+            @media screen and (max-width: 1200px) {
+                bottom: 750px;
+            }
+            @media screen and (max-width: 1024px) {
+                bottom: 650px;
+            }
+            @media screen and (max-width: 900px) {
+                bottom: 600px;
+            }
+            @media screen and (max-width: 768px) {
+                display: flex;
+                flex-direction: column;
+                bottom: 500px;
+                padding: 5vh 20vw 0;
+            }
+            @media screen and (max-width: 610px) {
+                bottom: 380px;
+            }
+            @media screen and (max-width: 550px) {
+                bottom: 300px;
+            }
+            @media screen and (max-width: 480px) {
+                bottom: 200px;
+                padding: 5vh 25vw 0;
+            }
             & > p{
-                font-size: 15px;
+                font-size: clamp(15px, 3vw, 19px);
                 text-align: left;
-                @media screen and (min-width: 320px) {
-                    font-size: calc(15px + (19 - 15) * ((100vw - 320px) / 880));
-                }
-                @media screen and (min-width: 1200px) {
-                    font-size: 19px;
-                }
             }
             &-title{
                 margin-top: 5vh;
                 margin-bottom: -10vh;
+                @media screen and (max-width: 768px) {
+                    margin-top: -50vw;
+                }
                 & > h1:nth-child(1){
                     position: relative;
                     z-index: 2;
                     font-weight: 700;
-                    font-size: 35px;
+                    font-size: clamp(35px, 10vw, 100px);
                     color: $banana;
                     background-color: $pinkyboy;
                     padding: 0 4%;
                     left: 8vw;
                     display: inline-block;
                     transform: rotate(20deg);
-                    @media screen and (min-width: 320px) {
-                        font-size: calc(35px + (100 - 35) * ((100vw - 320px) / 880));
-                    }
-                    @media screen and (min-width: 1200px) {
-                        font-size: 100px;
+                    @media screen and (max-width: 768px) {
+                        left: 5vw;
+                        top: 5vh;
                     }
                 }
                 & > h1:nth-child(2){
                     position: relative;
                     z-index: 2;
                     font-weight: 700;
-                    font-size: 35px;
+                    font-size: clamp(35px, 10vw, 100px);
                     color: $greentea;
-                    @media screen and (min-width: 320px) {
-                        font-size: calc(35px + (100 - 35) * ((100vw - 320px) / 880));
-                    }
-                    @media screen and (min-width: 1200px) {
-                        font-size: 100px;
+                    @media screen and (max-width: 768px) {
+                        right: 13vw;
                     }
                 }
                 & > p{
@@ -108,20 +145,17 @@
                     z-index: 1;
                     top: -12vh;
                     left: -6vw;
-                    font-size: 30px;
+                    font-size: clamp(30px, 10vw, 70px);
                     color: $greentea;
                     font-family: $ternary-font;
                     background-image: url('/images/about/left-star.svg');
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: auto;
+                    background-size: clamp(40%, 50vw, 20%);;
                     padding: 10vh 0;
                     margin: 0;
-                    @media screen and (min-width: 320px) {
-                        font-size: calc(30px + (70 - 30) * ((100vw - 320px) / 880));
-                    }
-                    @media screen and (min-width: 1200px) {
-                        font-size: 70px;
+                    @media screen and (max-width: 768px) {
+                        left: -15vw;
                     }
                 }
                 & > h1:nth-child(4){
@@ -130,13 +164,11 @@
                     margin-top: -35vh;
                     margin-left: 15vw;    
                     font-weight: 500;
-                    font-size: 37px;
+                    font-size: clamp(37px, 10vw, 120px);
                     color: $greentea;
-                    @media screen and (min-width: 320px) {
-                        font-size: calc(37px + (120 - 37) * ((100vw - 320px) / 880));
-                    }
-                    @media screen and (min-width: 1200px) {
-                        font-size: 120px;
+                    @media screen and (max-width: 768px) {
+                        margin-top: -45vh;
+                        margin-left: 15vw;  
                     }
                 }
                 & > img{
@@ -144,63 +176,104 @@
                     z-index: 1;
                     top: -42vh;
                     left: 13vw;
+                    width: clamp(40%, 50vw, 20%);
+                    @media screen and (max-width: 768px) {
+                        top: -30vh;
+                        left: 15vw;
+                    }
                 }
             }
         }
     }
     &-third{
-        padding: 10vh 10vw;
+        padding: 8vw 10vw;
         text-align: center;
+        justify-content: center;
+        align-items: center;
         display: flex;
         flex-direction: column;
+        @media screen and (max-width: 768px) {
+            padding: 8vw 1vw;
+        }
+        .small-screen{
+            display: none;
+            @media screen and (max-width: 768px) {
+                display: flex;
+            }
+        }
+        .large-screen{
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+
         &-title{
             display: flex;
             flex-wrap: wrap;
             text-align: center;
             align-items: center;
             margin: auto;
-            padding-bottom: 20vh;
+            padding-bottom: 8vw;
+            @media screen and (max-width: 768px) {
+                padding-bottom: 10vw;
+            }
             & > .triangle-up{
                 width: 0;
                 height: 0;
                 border-left: 25px solid transparent;
                 border-right: 25px solid transparent;
                 border-bottom: 50px solid $pinkyboy;
+                @media screen and (max-width: 768px) {
+                    border-left: 15px solid transparent;
+                    border-right: 15px solid transparent;
+                    border-bottom: 30px solid $pinkyboy;
+                }
+                @media screen and (max-width: 480px) {
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 20px solid $pinkyboy;
+                }
             }
             & > h2{
                 font-weight: 500;
-                font-size: 20px;
+                font-size: clamp(20px, 5vw, 60px);
                 color: $vanillalatte;
                 padding: 0 2vw;
-                @media screen and (min-width: 320px) {
-                    font-size: calc(20px + (60 - 20) * ((100vw - 320px) / 880));
-                }
-                @media screen and (min-width: 1200px) {
-                    font-size: 60px;
-                }
             }
         }
         &-pilars{
             display: flex;
             flex-wrap: wrap;
-            margin: 0 auto 10vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10vw;
             gap: 10vw;
+            @media screen and (max-width: 768px) {
+                gap: 5vw;
+                margin: 0 auto 15vw;
+            }
             &-item{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-end;
+                & > img{
+                    width: 80%;
+                    @media screen and (max-width: 1200px) {
+                        width: 75%;
+                    }
+                    @media screen and (max-width: 768px) {
+                        width: 60%;
+                    }
+                    @media screen and (max-width: 480px) {
+                        width: 50%;
+                    }
+                }
                 & > p{
                     font-weight: 300;
-                    font-size: 10px;
+                    font-size: clamp(10px, 3vw, 20px);
                     color: $cappuccino;
                     font-family: $primary-font;
-                    @media screen and (min-width: 320px) {
-                        font-size: calc(10px + (20 - 10) * ((100vw - 320px) / 880));
-                    }
-                    @media screen and (min-width: 1200px) {
-                        font-size: 20px;
-                    }
                 }
             }
         }
@@ -208,29 +281,43 @@
             display: flex;
             flex-wrap: wrap;
             margin: 0 auto;
+            justify-content: center;
+            align-items: center;
             gap: 15vw;
+            @media screen and (max-width: 1024px) {
+                gap: 10vw;
+            }
+            @media screen and (max-width: 768px) {
+                gap: 0vw;
+            }
             &-item{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-end;
+                & > img{
+                    width: 100%;
+                    @media screen and (max-width: 1200px) {
+                        width: 80%;
+                    }
+                    @media screen and (max-width: 768px) {
+                        width: 60%;
+                    }
+                    @media screen and (max-width: 480px) {
+                        width: 50%;
+                    }
+                }
                 & > p{
                     font-weight: 300;
-                    font-size: 10px;
+                    font-size: clamp(10px, 3vw, 40px);;
                     color: $cappuccino;
                     font-family: $primary-font;
-                    @media screen and (min-width: 320px) {
-                        font-size: calc(10px + (40 - 10) * ((100vw - 320px) / 880));
-                    }
-                    @media screen and (min-width: 1200px) {
-                        font-size: 40px;
-                    }
                 }
             }
         }
     }
     &-last{
-        padding: 10vh 5vw;
+        padding: 5vw;
         display: flex;
         background-color: $cappuccino;
         flex-direction: column;
@@ -238,14 +325,11 @@
             display: flex;
             & > h2{
                 font-weight: 500;
-                font-size: 35px;
+                font-size: clamp(35px, 8vw, 120px);
                 color: $greentea;
-                @media screen and (min-width: 320px) {
-                    font-size: calc(35px + (120 - 35) * ((100vw - 320px) / 880));
-                }
-                @media screen and (min-width: 1200px) {
-                    font-size: 120px;
-                }
+            }
+            & > img{
+                width: 15%;
             }
         }
         &-content{
@@ -253,6 +337,9 @@
             flex-wrap: wrap;
             text-align: center;
             gap: 5vw;
+            @media screen and (max-width: 480px) {
+                justify-content: center;
+            }
             &-item{
                 display: flex;
                 flex-direction: column;
@@ -262,29 +349,26 @@
                 transition: all .5s;
                 > img{
                     width: 100%;
-                    padding: 5vh 0;
+                    padding: 5vw 0 2vw;
+                    @media screen and (max-width: 768px) {
+                        width: 75%;
+                    }
+                    @media screen and (max-width: 610px) {
+                        width: 70%;
+                    }
+                    @media screen and (max-width: 480px) {
+                        width: 65%;
+                    }
                 }
                 > h6{
                     font-weight: 700;
-                    font-size: 7px;
+                    font-size: clamp(7px, 3vw, 13px);
                     color: $myblue;
-                    @media screen and (min-width: 320px) {
-                        font-size: calc(7px + (13 - 7) * ((100vw - 320px) / 880));
-                    }
-                    @media screen and (min-width: 1200px) {
-                        font-size: 13px;
-                    }
                 }
                 > p{
                     font-weight: 400;
-                    font-size: 7px;
+                    font-size: clamp(7px, 2vw, 13px);
                     max-width: 200px;
-                    @media screen and (min-width: 320px) {
-                        font-size: calc(7px + (13 - 7) * ((100vw - 320px) / 880));
-                    }
-                    @media screen and (min-width: 1200px) {
-                        font-size: 13px;
-                    }
                 }
                 &-position{
                     color: $myblue;
