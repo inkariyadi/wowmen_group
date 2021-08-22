@@ -12,6 +12,7 @@
 @import './components/lifestyle-card.scss';
 @import './components/article-card.scss';
 @import './components/library-card.scss';
+@import './components//footer.scss';
 
 // Page Styling
 @import './pages/shop.scss';
@@ -39,9 +40,6 @@ a {
 
 img {
   max-width: 100%;
-}
-
-.section-container {
 }
 
 .helper-text {

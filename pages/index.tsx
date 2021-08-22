@@ -1,7 +1,11 @@
+// Import Modules
 import React from 'react';
 import Head from 'next/head';
+
+// Import Component
 import Navbar from 'components/Navbar';
 import RoundedRectangle from 'components/RoundedRectangle';
+import Footer from 'components/Footer';
 
 function Home() {
   return (
@@ -59,6 +63,7 @@ function Home() {
         <div className="home-page-bottom">
           <img src="images/homePage/zigzag-bottom.svg" alt="zigzag bottom" />
         </div>
+        <Footer />
       </div>
     </>
   );
