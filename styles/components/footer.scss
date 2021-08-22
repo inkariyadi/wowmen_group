@@ -1,0 +1,141 @@
+.footer {
+  background-color: $cappuccino;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0 clamp(40px, 7vw, 90px);
+
+  &-box {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(20px, 3.75vw, 50px) 0;
+  }
+
+  &-title {
+    position: relative;
+    padding: 18px 0 0;
+    left: 21.5%;
+    font-size: 18px;
+    color: $pinkyboy;
+    font-weight: 600;
+
+    @media (max-width: 1000px) {
+      left: unset;
+    }
+  }
+
+  &-logo {
+    width: 27.5%;
+
+    @media (max-width: 1000px) {
+      position: absolute;
+      top: clamp(20px, 3.75vw, 50px);
+      right:  clamp(40px, 7vw, 90px);
+      padding-top: 18px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    img {
+      width: 50%;
+    }
+  }
+
+  &-container {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &-contact {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    max-height: 200px;
+
+    .contact {
+      box-sizing: border-box;
+      flex: 0 0 30%;
+      padding-top: 24px;
+      padding-right: 24px;
+
+      &-subtitle {
+        margin-bottom: 11px;
+        font-size: 18px;
+        color: $jeruksaya;
+        font-weight: 500;
+      }
+
+      &-value {
+        font-size: 18px;
+        color: $myblue;
+        font-weight: 500;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      min-height: 330px;
+
+      .contact {
+        &:nth-child(4), &:last-child {
+          position: relative;
+          top: clamp(72px, calc(72px + 4vw), 98px);
+        }
+
+        &-subtitle {
+          margin-bottom: 11px;
+          font-size: clamp(11px, 3vw, 18px);
+          color: $jeruksaya;
+          font-weight: 500;
+        }
+  
+        &-value {
+          font-size: clamp(11px, 3vw, 18px);
+          color: $myblue;
+          font-weight: 500;
+        }
+      }
+    }
+
+    @media (max-width: 540px) {
+      min-height: 270px;
+
+      .contact {
+        &:nth-child(4), &:last-child {
+          position: relative;
+          top: clamp(72px, calc(72px + 2.85vw), 87.5px);
+        }
+      }
+    }
+
+    @media (max-width: 447px) {
+      .contact {
+        &:nth-child(4), &:last-child {
+          position: relative;
+          top: clamp(72px, calc(72px + 1.5vw), 80px);
+        }
+      }
+    }
+  }
+
+  &-limiter {
+    width: 100%;
+    height: 5px;
+    background-color: $jeruksaya;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &-bottom {
+    padding: 20px 0;
+    text-align: center;
+    font-size: clamp(11px, 2.5vw, 18px);
+    color: $greentea;
+
+    @media (min-width: 1001px) {
+      padding-bottom: 36px;
+    }
+  }
+}
