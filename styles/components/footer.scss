@@ -132,6 +132,7 @@
     padding: 20px 0;
     text-align: center;
     font-size: clamp(11px, 2.5vw, 18px);
+    color: $greentea;
 
     @media (min-width: 1001px) {
       padding-bottom: 36px;
