@@ -9,10 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "@netlify/plugin-nextjs": "^3.8.0",
+    "axios": "^0.21.1",
+    "moment": "^2.29.1",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-material-ui-carousel": "^2.3.1",
+    "react-multi-carousel": "^2.6.3",
+    "react-number-format": "^4.7.3",
     "sass": "^1.37.5"
   },
   "devDependencies": {

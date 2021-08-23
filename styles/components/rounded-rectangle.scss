@@ -1,0 +1,88 @@
+.rounded-rectangle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        cursor: pointer;
+    }
+    &-image{
+        display: block;
+        margin: auto;
+    }
+}
+
+.pink-square{
+    background: $pinkyboy;
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 49px;
+    width: 132px;
+    height: 131px;
+    @media screen and (min-width: 320px) {
+        width: calc(132px + (321 - 132) * ((100vw - 320px) / 880));
+        height: calc(131px + (316 - 131) * ((100vw - 320px) / 880));
+    }
+    @media screen and (min-width: 1200px) {
+        width: 321px;
+        height: 316px;
+    }
+}
+
+.green-rectangle{
+    width: 214px;
+    height: 131px;
+    background: $greentea;
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 49px;
+    @media screen and (min-width: 320px) {
+        width: calc(214px + (516 - 214) * ((100vw - 320px) / 880));
+        height: calc(131px + (316 - 131) * ((100vw - 320px) / 880));
+    }
+    @media screen and (min-width: 1200px) {
+        width: 516px;
+        height: 316px;
+    }
+}
+
+.yellow-circle{
+    &-large, &-medium, &-small{
+        border-radius: 50%;
+        background: $banana;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &-large{
+        width: 164px;
+        height: 164px;
+        @media screen and (min-width: 320px) {
+            width: calc(164px + (370 - 164) * ((100vw - 320px) / 880));
+            height: calc(164px + (370 - 164) * ((100vw - 320px) / 880));
+        }
+        @media screen and (min-width: 1200px) {
+            width: 370px;
+            height: 370px;
+        }
+    }
+    &-medium{
+        width: 124px;
+        height: 124px;
+        @media screen and (min-width: 320px) {
+            width: calc(124px + (310 - 124) * ((100vw - 320px) / 880));
+            height: calc(124px + (310 - 124) * ((100vw - 320px) / 880));
+        }
+        @media screen and (min-width: 1200px) {
+            width: 310px;
+            height: 310px;
+        }
+    }
+    &-small{
+        width: 104px;
+        height: 104px;
+        @media screen and (min-width: 320px) {
+            width: calc(104px + (277 - 104) * ((100vw - 320px) / 880));
+            height: calc(104px + (277 - 104) * ((100vw - 320px) / 880));
+        }
+        @media screen and (min-width: 1200px) {
+            width: 277px;
+            height: 277px;
+        }
+    }
+}

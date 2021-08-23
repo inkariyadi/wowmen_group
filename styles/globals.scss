@@ -1,18 +1,48 @@
-@import './components/button.scss';
+// Basic styling
+@import './fonts.scss';
+@import './variables.scss';
+@import './typography.scss';
+
+// Component Styling
+@import './components/navbar.scss';
+@import './components/product-card.scss';
+@import './components/trinkets.scss';
+@import './components/rounded-rectangle.scss';
+@import './components/order-form.scss';
+@import './components/lifestyle-card.scss';
+@import './components/article-card.scss';
+@import './components/library-card.scss';
+@import './components//footer.scss';
+
+// Page Styling
+@import './pages/shop.scss';
+@import './pages/programs.scss';
+@import './pages/homepage.scss';
+@import './pages/articles.scss';
+@import './pages/about.scss';
+@import './pages/wowmen-academy.scss';
+
 
 html,
-body {
+body{
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $primary-font;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 a {
   color: inherit;
+  font-family: $ternary-font;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+img {
+  max-width: 100%;
+}
+
+.helper-text {
+  color: $magenta;
+  margin-left: 12px;
 }

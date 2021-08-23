@@ -1,0 +1,175 @@
+.wowmen{
+    background-color: $fanta;
+    &-top{
+        font-family: $poppins-font;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 19vh 0 10vh;
+        & > p{
+            margin-bottom: -20vh;
+            color: $vanilla;
+            font-weight: 300;
+            font-size: clamp(15px, 2vw, 30px);
+        }
+        &-img{
+            position: relative;
+            z-index: 1;
+            &-1{
+                top: 30vh;
+                left: 8vw;
+            }
+            &-2{
+                top: 15vh;
+                left: 12vw;
+            }
+            &-3{
+                top: 9vh;
+                right: 12vw;
+            }
+            &-4{
+                top: 20vh;
+                left: 2vw;
+            }
+            &-5{
+                top: 30vh;
+                right: 8vw;
+            }
+            &-6{
+                bottom: 40vh;
+                left: 5vw;
+            }
+            &-7{
+                left: 2vw;
+            }
+            &-8{
+                bottom: 5vh;
+                right: 5vw;
+            }
+            &-9{
+                bottom: 8vh;
+                left: 8vw;
+            }
+            &-10{
+                bottom: 5vh;
+                right: 8vw;
+            }
+        }
+        &-logo{
+            margin-bottom: -45vh;
+            &-img{
+                position: relative;
+                z-index: 2;
+            }
+            
+        }
+    }
+    &-second{
+        background-color: $vanilla;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 5vh 0 10vh 2vw;
+        &-left{
+            &-img{
+                position: relative;
+                z-index: 1;
+                &-2{
+                    top: 25vh;
+                    right: 8vw;
+                }
+                &-3{
+                    top: 20vh;
+                    left: 12vw;
+                }
+                &-4{
+                    right: 3vw;
+                }
+                &-5{
+                    left: 25vw;
+                }
+                &-6{
+                    left: 60vw;
+                }
+            }
+            &-logo{
+                margin-bottom: -28vh;
+                &-img{
+                    position: relative;
+                    z-index: 2;
+                }
+                
+            }
+        }
+        &-right{
+            & > h1{
+                background-image: url('/images/wowmenAcademy/circle-scratch.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: auto;
+                font-weight: 900;
+                font-size: clamp(30px, 10vw, 80px);
+                color: $blueocean;
+                padding: 10vh 20vh;
+                font-family: $cooper-font;
+            }
+            & > p{
+                text-align: left;
+                background-image: url('/images/wowmenAcademy/desc-background.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: auto;
+                font-weight: 300;
+                font-size: clamp(15px, 8vw, 30px);
+                line-height: 35px;
+                color: $vanilla;
+                padding: 20vh;
+                font-family: $poppins-font;
+            }
+        }
+    }
+    &-third{
+        display: flex;
+        background-color: $orenmalu;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15vh 5vw;
+    }
+    &-learning{
+        background-color: $ijolumut;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15vh 5vw;
+        &-content{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+        }
+        & > h1{
+            font-weight: 900;
+            font-size: clamp(30px, 30vw, 80px);
+            color: $vanilla;
+            font-family: $cooper-font;
+            margin-bottom: 10vh;
+        }
+    }
+    &-last{
+        display: flex;
+        background-color: $orenmalu;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        & > h1{
+            font-weight: 900;
+            font-size: clamp(20px, 5vw, 80px);
+            color: $birukematian;
+            font-family: $cooper-font;
+        }
+    }
+}
