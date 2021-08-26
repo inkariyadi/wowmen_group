@@ -7,9 +7,9 @@
         flex-direction: column;
         & > .top{
             text-align: center;
-            padding: 15vh 0 0;
+            padding: 8vw 0 0;
             @media (max-width: 1200px) {
-                padding: 100px 0 2.5vh;
+                padding: 10vw 0 2vw;
             }
             & > img{
                 width: 15%;
@@ -22,13 +22,16 @@
             }
         }
         & > .middle{
-            margin: -3vh 0 0 ;
+            margin: -2vw 0 0 ;
             display: flex;
             justify-content: center;
             & > img:nth-child(1){
                 position: relative;
-                left: 38vw;
+                left: 30vw;
                 z-index: 1;
+                @media (max-width: 1700px) {
+                    left: 35vw;
+                }
                 @media (max-width: 1200px) {
                     left: 48vw;
                 }
@@ -49,9 +52,12 @@
             }
             & > img:nth-child(2){
                 position: relative;
-                left: 31vw;
-                top: 8vh;
+                left: 25vw;
+                top: 4vw;
                 z-index: 0;
+                @media (max-width: 1700px) {
+                    left: 30vw;
+                }
                 @media (max-width: 1200px) {
                     left: 40vw;
                 }
@@ -70,9 +76,12 @@
             }
             & > img:nth-child(3){
                 position: relative;
-                left: 9vw;
-                top: 12vh;
+                left: 6vw;
+                top: 6vw;
                 z-index: 2;
+                @media (max-width: 1700px) {
+                    left: 8vw;
+                }
                 @media (max-width: 1200px) {
                     left: 10vw;
                 }
@@ -92,18 +101,15 @@
             }
             & > h1{
                 font-weight: 900;
-                font-size: 64px;
+                font-size: clamp(64px, 18vw, 144px);
                 position: relative;
                 color: $myblue;
-                right: 34vw;
-                top: 4vh;
+                right: 30vw;
+                top: 2vw;
                 z-index: 4;
                 transform: rotate(3.48deg);
-                @media screen and (min-width: 320px) {
-                    font-size: calc(64px + 80 * ((100vw - 320px) / 880));
-                }
-                @media screen and (min-width: 1200px) {
-                    font-size: 144px;
+                @media (max-width: 1700px) {
+                    right: 32vw;
                 }
                 @media (max-width: 1200px) {
                     right: 48vw;
@@ -121,22 +127,19 @@
             & > h3{
                 font-family: $secondary-font;
                 font-weight: 400;
-                font-size: 48px;
+                font-size: clamp(48px, 12vw, 96px);
                 color: $greentea;
                 transform: rotate(-14.2deg);
                 position: relative;
-                right: 36vw;
+                right: 31vw;
                 z-index: 4;
-                top: 25vh;
-                @media screen and (min-width: 320px) {
-                    font-size: calc(48px + 48 * ((100vw - 320px) / 880));
-                }
-                @media screen and (min-width: 1200px) {
-                    font-size: 96px;
+                top: 12vw;
+                @media (max-width: 1700px) {
+                    right: 34vw;
                 }
                 @media (max-width: 1200px) {
                     right: 50vw;
-                    top: 30vh;
+                    top: 15vw;
                 }
                 @media (max-width: 1024px) {
                     right: 52vw;
@@ -152,11 +155,11 @@
 
         }
         .bottom{
-            margin: -10vh 0 15vh -20vw;
+            margin: -3vw 0 8vw -20vw;
             display: flex;
             justify-content: center;
             @media (max-width: 1200px) {
-                margin: -10vh 0 15vh -28vw;
+                margin: -4vw 0 10vw -28vw;
             }
             @media (max-width: 1024px) {
                 margin: -18vh 0 15vh -35vw;
@@ -167,7 +170,7 @@
             & > img:nth-child(1){
                 position: relative;
                 right: -4vw;
-                width: 17%;
+                width: 13%;
                 @media (max-width: 1024px) {
                     right: -6vw;
                 }
@@ -182,14 +185,8 @@
             }
             & > h2{
                 font-weight: 900;
-                font-size: 60px;
+                font-size: clamp(60px, 10vw, 96px);
                 color: $cappuccino;
-                @media screen and (min-width: 320px) {
-                    font-size: calc(60px + 36 * ((100vw - 320px) / 880));
-                }
-                @media screen and (min-width: 1200px) {
-                    font-size: 96px;
-                }
                 @media (max-width: 480px) {
                     left: -10vw;
                 }
@@ -199,7 +196,7 @@
     }
         
     &-second{
-        padding: 0 0 15vh 6vw;
+        padding: 0 0 10vw 6vw;
         background-color: $jeruksaya;
         height: 100%;
         display: flex;
@@ -216,7 +213,7 @@
             }
         }
         & > .description{
-            margin-top: -10vh;
+            margin-top: -8vw;
             padding-right: 6vw;
             & > h1{
                 font-weight: 900;
@@ -253,7 +250,7 @@
         }
     }
     &-third{
-        padding: 15vh 6vw;
+        padding: 8vw 6vw;
         background-color: $cappuccino;
         height: 100%;
         & > h1{
@@ -300,7 +297,7 @@
         
     }
     &-last{
-        padding: 15vh 6vw 10vh;
+        padding: 8vw 6vw 5vw;
         background-color: $pinkyboy;
         height: 100%;
         & > h1{

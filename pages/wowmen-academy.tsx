@@ -56,6 +56,7 @@ function About () {
           </div>
           <div className="wowmen-second-right">
             <h1>Introduction</h1>
+            <img className="wowmen-second-right-small" src="/images/wowmenAcademy/rotate-background.svg"/>
             <p>
               <strong>Wowmen Academy</strong> is and education platform providing learning contents and programs (learning made easy!)<br/><br/>Focusing on building women’s capabilities to act on the world, fostering the development of women’s empowerment, and create future women leaders and changemakers.
             </p>
