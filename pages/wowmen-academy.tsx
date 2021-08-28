@@ -69,6 +69,7 @@ function About () {
         <div className="wowmen-learning">
           <h1>Our Learning Library</h1>
           <div className="wowmen-learning-content">
+            {/* TODO: change attribute with fetched data or real data */}
             <LibraryCard title="Lesson Plans" desc="Our ready-made lesson plans make it easy for classroom educators." buttontxt="GET MY PLAN" href="/" />
             <LibraryCard title="Tips" desc="More tips about Education!" buttontxt="GET HERE" href="/" />
             <LibraryCard title="Inspiring" desc="xxxxxxxxxxx" buttontxt="GET TO KNOW" href="/" />

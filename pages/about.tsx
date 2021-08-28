@@ -4,19 +4,19 @@ import Head from 'next/head';
 
 function About () {
   const pilars = [
-    {src: 'images/about/content-pilar-1.svg', name: 'content pillars 1'},
-    {src: 'images/about/content-pilar-2.svg', name: 'content pillars 2'},
-    {src: 'images/about/content-pilar-3.svg', name: 'content pillars 3'},
-    {src: 'images/about/content-pilar-4.svg', name: 'content pillars 4'},
+    {src: 'images/about/content-pilar-1.svg', name: 'content pillars 1', href:'/'},
+    {src: 'images/about/content-pilar-2.svg', name: 'content pillars 2', href:'/'},
+    {src: 'images/about/content-pilar-3.svg', name: 'content pillars 3', href:'/'},
+    {src: 'images/about/content-pilar-4.svg', name: 'content pillars 4', href:'/'},
   ];
   const products = [
-    {src: 'images/about/youtube.svg', name: 'youtube'},
-    {src: 'images/about/instagram.svg', name: 'instagram'},
-    {src: 'images/about/program.svg', name: 'programs'},
+    {src: 'images/about/youtube.svg', name: 'youtube', href:'/'},
+    {src: 'images/about/instagram.svg', name: 'instagram', href:'/'},
+    {src: 'images/about/program.svg', name: 'programs', href:'/'},
   ];
   const [hoverIdx, setHoverIdx] = useState(-1);
 
-  // dummy data
+  // TODO: Change dummy data to fetched data
   const [teams, setTeams] = useState([
     {
       src: 'images/about/ceo-1.svg', 
@@ -108,9 +108,9 @@ function About () {
             <div className="triangle-up"></div>
           </div>
           <div className="about-third-pilars">
-            {/* TODO: change href with real data */}
-            {pilars.map(({ src, name }) => (
-              <a key={name} className="about-third-pilars-item" href="/">
+            {/* TODO: change attribute with fetched data */}
+            {pilars.map(({ src, name, href }) => (
+              <a key={name} className="about-third-pilars-item" href={href}>
                 <img src={src} alt={name}/>
                 <p>{name}</p>
               </a>
@@ -122,9 +122,9 @@ function About () {
             <div className="triangle-up"></div>
           </div>
           <div className="about-third-products">
-            {/* TODO: change href with real data */}
-            {products.map(({ src, name }) => (
-              <a key={name} className="about-third-products-item" href="/">
+            {/* TODO: change attribute with fetched data */}
+            {products.map(({ src, name, href }) => (
+              <a key={name} className="about-third-products-item" href={href}>
                 <img src={src} alt={name}/>
                 <p>{name}</p>
               </a>
