@@ -15,9 +15,6 @@ function Home() {
             <img src="images/homePage/black-flower-wowmen.svg" alt="blak flower wowmen" />
           </div>
           <div className="middle">
-            <img src="images/homePage/orange-rectangle.svg" alt="orange rectangle" />
-            <img src="images/homePage/outlined-black-star.svg" alt="outlined black star" />
-            <img src="images/homePage/solid-yellow-star.svg" alt="solid yellow star" />
             <h1>Hello!</h1>
             <h3>Welcome</h3>
           </div>
@@ -40,8 +37,13 @@ function Home() {
               <RoundedRectangle type="pink-square" />
               <RoundedRectangle type="pink-square" />
               <RoundedRectangle type="pink-square" />
+              <RoundedRectangle type="pink-square" />
+              <RoundedRectangle type="pink-square" />
+              <RoundedRectangle type="pink-square" />
             </div>
-            <div className="home-page-third-socmed-items">
+            <div className="home-page-third-socmed-items home-page-third-socmed-items-two">
+              <RoundedRectangle type="green-rectangle" />
+              <RoundedRectangle type="green-rectangle" />
               <RoundedRectangle type="green-rectangle" />
               <RoundedRectangle type="green-rectangle" />
             </div>
