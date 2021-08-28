@@ -1,9 +1,45 @@
 // Import Modules
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import RoundedRectangle from 'components/RoundedRectangle';
 
 function Home() {
+  // TODO: Change dummy data to fetched data
+  const [socmed1, setSocmed1] = useState(
+    [
+      {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 1, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 2, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 3, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 4, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 5, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+    ]
+  );
+  // TODO: Change dummy data to fetched data
+  const [socmed2, setSocmed2] = useState(
+    [
+      {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 1, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 2, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 3, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 4, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 5, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+    ]
+  );
+  // TODO: Change dummy data to fetched data
+  const [partners, setPartners] = useState(
+    [
+      {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 1, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 2, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 3, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 4, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 5, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+    ]
+  );
   return (
     <>
       <Head>
@@ -34,23 +70,26 @@ function Home() {
           <h1>ini buat socmed</h1>
           <div className="home-page-third-socmed">
             <div className="home-page-third-socmed-items">
-              <RoundedRectangle type="pink-square" />
-              <RoundedRectangle type="pink-square" />
-              <RoundedRectangle type="pink-square" />
-              <RoundedRectangle type="pink-square" />
-              <RoundedRectangle type="pink-square" />
-              <RoundedRectangle type="pink-square" />
+              {/* TODO: change attribute with fetched data */}
+              {socmed1.map(({ idx, src, alt, href}) => (
+                <RoundedRectangle key={idx} type="pink-square" imageSRC={src} imageALT={alt} href={href}/>
+              ))}
             </div>
             <div className="home-page-third-socmed-items home-page-third-socmed-items-two">
-              <RoundedRectangle type="green-rectangle" />
-              <RoundedRectangle type="green-rectangle" />
-              <RoundedRectangle type="green-rectangle" />
-              <RoundedRectangle type="green-rectangle" />
+              {/* TODO: change attribute with fetched data */}
+              {socmed2.map(({ idx, src, alt, href}) => (
+                <RoundedRectangle key={idx} type="green-rectangle" imageSRC={src} imageALT={alt} href={href}/>
+              ))}
             </div>
           </div>
         </div>
         <div className="home-page-last">
           <div className="partner-wrapper">
+            {/* TODO: change attribute with fetched data */}
+            {partners.map(({ idx, src, alt, href}) => (
+              <RoundedRectangle key={idx} type="yellow-circle-large" imageSRC={src} imageALT={alt} href={href}/>
+            ))}
+            {/* TODO: Gimana cara bedain kapan pake lingkaran gede kapan pake lingkaran kecil?? */}
             <RoundedRectangle type="yellow-circle-large" />
             <RoundedRectangle type="yellow-circle-medium" />
             <RoundedRectangle type="yellow-circle-small" />
