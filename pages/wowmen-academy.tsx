@@ -1,13 +1,18 @@
 // Import Modules
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 
 // Import Components
 import LibraryCard from 'components/LibraryCard';
 
 function About () {
+  const router = useRouter();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const landingAset = [
     {styleName: 'wowmen-top-img wowmen-top-img-1', src: 'images/wowmenAcademy/small-white-star.svg', alt: 'small white star'},
     {styleName: 'wowmen-top-img wowmen-top-img-2', src: 'images/wowmenAcademy/red-slayer.svg', alt: 'red slayer'},
@@ -33,14 +38,6 @@ function About () {
 
   const thirdAsset = [
     {
-      title: 'ww-1',
-      img: 'white-wind.svg',
-    },
-    {
-      title: 'ww-2',
-      img: 'white-wind.svg',
-    },
-    {
       title: 'values',
       img: 'taro-pacman.svg',
     },
@@ -55,6 +52,14 @@ function About () {
     {
       title: 'vision',
       img: 'orange-ellipse.svg',
+    },
+    {
+      title: 'ww-1',
+      img: 'white-wind.svg',
+    },
+    {
+      title: 'ww-2',
+      img: 'white-wind.svg',
     },
   ];
 
@@ -97,6 +102,13 @@ function About () {
     'FADHIL MUHAMMAD',
   ];
 
+  const handleSlide = (idx: number) => {
+    if (idx === 0) setCurrentSlide(1); // For Values
+    if (idx === 1) router.push('/about');
+    if (idx === 2) setCurrentSlide(3); // For Mission 
+    if (idx === 3) setCurrentSlide(2); // For Vision
+  };
+
   return(
     <>
       <Head>
@@ -135,13 +147,21 @@ function About () {
         </div>
         {/* PADILL SECTION */}
         <div className="wowmen-third-container">
-          <AwesomeSlider fillParent>
+          <AwesomeSlider
+            selected={currentSlide}
+            fillParent
+            animation="cubeAnimation"
+          >
             <div className="wowmen-third">
               <div className="main">
                 <img src="/images/wowmenAcademy/thirdSection/pink-background.png" alt="pink-background" className="background" />
                 <div className="content">
-                  {thirdAsset.map(({ title, img}) => (
-                    <div className={title === 'about' ? 'about no-bg' : title} key={title}>
+                  {thirdAsset.map(({ title, img }, idx) => (
+                    <div
+                      className={title === 'about' ? 'about no-bg' : title}
+                      key={title}
+                      onClick={() => handleSlide(idx)}
+                    >
                       <img src={`/images/wowmenAcademy/thirdSection/${img}`} alt={title} className={`${title}-img`} />
                       {title.slice(0,2) !== 'ww' && (
                         <div className={`${title}-text`}>
@@ -157,7 +177,7 @@ function About () {
               <div className="detail-title">
                 <img src="/images/wowmenAcademy/thirdSection/taro-pacman.svg" alt="value" className="values-img" />
                 <div className="detail-text value-logo">
-              Values
+                  Values
                 </div>
               </div>
               {valueSectionAsset.map((props, key) => (
@@ -168,7 +188,7 @@ function About () {
               <div className="detail-title vision-logo-title">
                 <img src="/images/wowmenAcademy/thirdSection/orange-ellipse.svg" alt="value" className="values-img" />
                 <div className="detail-text vision-logo">
-              Vision
+                  Vision
                 </div>
               </div>
               <div className="section-title vision-title">
