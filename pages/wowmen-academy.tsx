@@ -219,6 +219,20 @@ function About () {
                 ))}
               </div>
             </div>
+            <div className="mission-section">
+              <img className="mission-section-img-1" src="images/wowmenAcademy/thirdSection/peach-star.svg" alt="peach-1" />
+              <div className="mission-section-title">
+                <h1>Mission</h1>
+              </div>
+              <img className="mission-section-img-2" src="images/wowmenAcademy/thirdSection/peach-three-star.svg" alt="peach-2" />
+              <img className="mission-section-img-3" src="images/wowmenAcademy/thirdSection/peach-bean.svg" alt="peach-3" />
+              <img className="mission-section-img-4" src="images/wowmenAcademy/thirdSection/purple-star.svg" alt="purple-4" />
+              <div className="mission-section-content">
+                <h1>Educational Contents</h1>
+                <h1>Collaborative Learning</h1>
+                <h1>and more upcoming programs</h1>
+              </div>
+            </div>
           </AwesomeSlider>
         </div>
         

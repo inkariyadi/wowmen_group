@@ -828,6 +828,206 @@
         }
     }
 
+    .mission-section{
+        background-color: $butterbts;
+        padding: 0 8vw;
+        box-sizing: border-box;
+        width: 100vw;
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: stretch;
+        @media (max-width: 480px) {
+            padding: 0 5vw;
+        }
+        &-img{
+            &-1{
+                position: relative;
+                left: 45vw;
+                top: 28vw;
+                width: 10%;
+                @media (max-width: 768px) {
+                    top: 22vw;
+                    width: 12%;
+                }
+                @media (max-width: 480px) {
+                    left: 20vw;
+                    width: 15%;
+                }
+            }
+            &-2{
+                position: relative;
+                top: 22vw;
+                left: 3vw;
+                width: 10%;
+                @media (max-width: 768px) {
+                    top: 23vw;
+                    width: 12%;
+                }
+                @media (max-width: 480px) {
+                    top: 30vw;
+                    width: 15%;
+                }
+            }
+            &-3{
+                position: relative;
+                top: 25vw;
+                left: 70vw;
+                width: 8%;
+                @media (max-width: 768px) {
+                    top: 28vw;
+                    width: 10%;
+                }
+                @media (max-width: 480px) {
+                    top: 30vw;
+                    width: 13%;
+                }
+            }
+            &-4{
+                display: none;
+                @media (max-width: 588px) {
+                    position: relative;
+                    width: 20%;
+                    display: inline;
+                    top: 30vw;
+                    left: 50vw;
+                }
+                @media (max-width: 480px) {
+                    top: 50vw;
+                    width: 22%;
+                }
+            }
+        }
+        &-title{
+            position: relative;
+            top: 20vw;
+            display: flex;
+            justify-content: flex-end;
+            @media (max-width: 768px) {
+                top: 12vw;
+            }
+            @media (max-width: 588px) {
+                top: 10vw;
+            }
+            @media (max-width: 480px) {
+                top: 12vw;
+            }
+            & > h1{
+                background-image: url('/images/wowmenAcademy/thirdSection/green-triangle.svg');
+                background-repeat: no-repeat;
+                background-position: top;
+                background-size: 75%;
+                padding: 8vw 5vw;
+                color: $vanilla;
+                font-family: $fira-font;
+                font-weight: 900;
+                text-align: center;
+                font-size: clamp(25px, 4vw, 50px);
+                @media (max-width: 588px) {
+                    padding: 10vw 5vw 2vw;
+                }
+                @media (max-width: 480px) {
+                    padding: 10vw 5vw 5vw;
+                }
+            }
+        }
+        &-content{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            bottom: 10vw;
+            @media (max-width: 768px) {
+                bottom: 15vw;
+            }
+            @media (max-width: 588px) {
+                bottom: 22vw;
+            }
+            @media (max-width: 480px) {
+                bottom: 30vw;
+                gap: 2vw;
+            }
+            & > h1{
+                justify-content: center;
+                align-items: center;
+                background-repeat: no-repeat;
+                background-position: center;
+                text-align: center;
+                font-family: $poppins-font;
+                color: $vanilla;
+                position: relative;
+            }
+            & > h1:nth-child(1){
+                background-image: url('/images/wowmenAcademy/thirdSection/blue-ulet-bulu.svg');
+                background-size: 68%;
+                font-weight: 800;
+                padding: 8vw 5vw;
+                transform: rotate(6.55deg);
+                font-size: clamp(20px, 4vw, 60px);
+                right: 12vw;
+                @media (max-width: 1400px) {
+                    background-size: 73%;
+                }
+                @media (max-width: 588px) {
+                    right: 0;
+                    background-size: 80%;
+                }
+                @media (max-width: 480px) {
+                    background-size: 90%;
+                }
+            }
+            & > h1:nth-child(2){
+                background-image: url('/images/wowmenAcademy/thirdSection/fanta-trapesium.svg');
+                background-size: 70%;
+                font-weight: 800;
+                padding: 7vw 5vw 5vw;
+                transform: rotate(-5.81deg);
+                font-size: clamp(20px, 4vw, 60px);
+                left: 12vw;
+                bottom: 8vw;
+                @media (max-width: 1400px) {
+                    background-size: 75%;
+                }
+                @media (max-width: 768px) {
+                    bottom: 6vw;
+                }
+                @media (max-width: 588px) {
+                    left: 0;
+                    bottom: 0;
+                    background-size: 80%;
+                }
+                @media (max-width: 480px) {
+                    background-size: 90%;
+                }
+            }
+            & > h1:nth-child(3){
+                background-image: url('/images/wowmenAcademy/thirdSection/orange-long-ellipse.svg');
+                background-size: 70%;
+                font-weight: 600;
+                padding: 7vw 5vw;
+                transform: rotate(2.18deg);
+                font-size: clamp(18px, 3vw, 45px);
+                right: 12vw;
+                bottom: 12vw;
+                @media (max-width: 1400px) {
+                    background-size: 75%;
+                }
+                @media (max-width: 768px) {
+                    bottom: 8vw;
+                }
+                @media (max-width: 588px) {
+                    right: 0;
+                    bottom: 0;
+                    background-size: 80%;
+                }
+                @media (max-width: 480px) {
+                    background-size: 90%;
+                }
+            }
+        }
+    }
+
     &-learning{
         background-color: $ijolumut;
         align-items: center;
