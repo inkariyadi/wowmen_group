@@ -329,7 +329,7 @@
 
         &-container {
             position: relative;
-            min-height: 110vh;
+            min-height: 115vh;
 
             @media (max-width: 768px) {
                 min-height: 100vh;
@@ -416,8 +416,13 @@
 
                 @media (min-width: 1260px) {
                     .ww-1 {
-                        top: 10%;
+                        top: 15%;
                         right: -9%;
+                    }
+
+                    .ww-2 {
+                        top: 75%;
+                        left: -2.5%;
                     }
                 }
                 
@@ -510,7 +515,7 @@
 
         &.value-section {
             background-color: $vanilla;
-       
+            padding-bottom: 5vh;
 
             @media (min-width: 1000px) {
                 padding: 5vw;
@@ -588,7 +593,7 @@
 
         .detail {
             &-title {
-                top: 5vw;
+                top: 4vw;
                 left: 8vw;
                 position: absolute;
                 display: inline-block;
@@ -631,14 +636,16 @@
         }
 
         .section-title {
+            box-sizing: border-box;
             position: relative;
             left: 54%;
             transform: translateX(-50%);
+            padding: 5vw;
             padding-top: 5vw;
             padding-bottom: 40px;
 
             &.value-title {
-                width: clamp(300px, 45%, 798px); 
+                width: clamp(300px, 50%, 798px); 
 
                 @media (max-width: 588px) {
                     padding-top: 12vh;
@@ -678,7 +685,7 @@
             position: relative;
             display: block;
             left: 54%;
-            width: clamp(240px, 30%, 466px);
+            width: clamp(240px, 25%, 466px);
             transform: translateX(-50%);
             padding-bottom: 5vw;
         }
@@ -691,10 +698,10 @@
             margin: 0 auto 40px;
             min-width: 64%;
             max-width: 75%;
-            min-height: 54vh;
+            min-height: 50vh;
             display: flex;
             align-items: flex-start;
-            justify-content: center;
+            justify-content: space-around;
             flex-direction: column;
             padding: 5vw;
 
