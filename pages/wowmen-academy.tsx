@@ -31,6 +31,14 @@ function About () {
 
   const thirdAsset = [
     {
+      title: 'ww-1',
+      img: 'white-wind.svg',
+    },
+    {
+      title: 'ww-2',
+      img: 'white-wind.svg',
+    },
+    {
       title: 'values',
       img: 'taro-pacman.svg',
     },
@@ -131,9 +139,11 @@ function About () {
               {thirdAsset.map(({ title, img}) => (
                 <div className={title === 'about' ? 'about no-bg' : title} key={title}>
                   <img src={`/images/wowmenAcademy/thirdSection/${img}`} alt={title} className={`${title}-img`} />
-                  <div className={`${title}-text`}>
-                    {title}
-                  </div>
+                  {title.slice(0,2) !== 'ww' && (
+                    <div className={`${title}-text`}>
+                      {title}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -151,7 +161,7 @@ function About () {
           ))}
         </section>
         <section id="vision" className="detail-section vision-section">
-          <div className="detail-title">
+          <div className="detail-title vision-logo-title">
             <img src="/images/wowmenAcademy/thirdSection/orange-ellipse.svg" alt="value" className="values-img" />
             <div className="detail-text vision-logo">
               Vision
@@ -161,11 +171,11 @@ function About () {
             <h5>All women have big dreams</h5>
             <h3>and so do we.</h3>
           </div>
-          {Array.from(Array(10).keys()).map((item) => (
+          {Array.from(Array(4).keys()).map((item) => (
             <div key={item} className="circle" />
           ))}
           <div className="vision-board">
-            {Array.from(Array(10).keys()).map((item) => (
+            {Array.from(Array(4).keys()).map((item) => (
               <div key={item} className="nail" />
             ))}
             {vision.map((item: string, idx: number) => (
