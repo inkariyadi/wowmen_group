@@ -8,10 +8,10 @@ function Home() {
   const [socmed1, setSocmed1] = useState(
     [
       {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 1, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 1, src: 'images/about/ceo-2.svg', alt: 'gambar', href: '/'},
       {idx: 2, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
       {idx: 3, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 4, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 4, src: 'images/about/ceo-3.svg', alt: 'gambar', href: '/'},
       {idx: 5, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
       {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
     ]
@@ -32,10 +32,10 @@ function Home() {
   const [partners, setPartners] = useState(
     [
       {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 1, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 2, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 3, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 4, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
+      {idx: 1, src: 'images/about/ceo-2.svg', alt: 'gambar', href: '/'},
+      {idx: 2, src: 'images/about/ceo-3.svg', alt: 'gambar', href: '/'},
+      {idx: 3, src: 'images/about/ceo-2.svg', alt: 'gambar', href: '/'},
+      {idx: 4, src: 'images/about/ceo-3.svg', alt: 'gambar', href: '/'},
       {idx: 5, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
       {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
     ]
@@ -87,12 +87,9 @@ function Home() {
           <div className="partner-wrapper">
             {/* TODO: change attribute with fetched data */}
             {partners.map(({ idx, src, alt, href}) => (
-              <RoundedRectangle key={idx} type="yellow-circle-large" imageSRC={src} imageALT={alt} href={href}/>
+              <RoundedRectangle key={idx} type="yellow-circle" imageSRC={src} imageALT={alt} href={href}/>
             ))}
             {/* TODO: Gimana cara bedain kapan pake lingkaran gede kapan pake lingkaran kecil?? */}
-            <RoundedRectangle type="yellow-circle-large" />
-            <RoundedRectangle type="yellow-circle-medium" />
-            <RoundedRectangle type="yellow-circle-small" />
           </div>
           <h1>Past<br/>Partners &<br/>Events</h1>
         </div>
