@@ -1,6 +1,8 @@
 // Import Modules
 import React from 'react';
 import Head from 'next/head';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 // Import Components
 import LibraryCard from 'components/LibraryCard';
@@ -132,69 +134,74 @@ function About () {
           </div>
         </div>
         {/* PADILL SECTION */}
-        <section className="wowmen-third">
-          <div className="main">
-            <img src="/images/wowmenAcademy/thirdSection/pink-background.png" alt="pink-background" className="background" />
-            <div className="content">
-              {thirdAsset.map(({ title, img}) => (
-                <div className={title === 'about' ? 'about no-bg' : title} key={title}>
-                  <img src={`/images/wowmenAcademy/thirdSection/${img}`} alt={title} className={`${title}-img`} />
-                  {title.slice(0,2) !== 'ww' && (
-                    <div className={`${title}-text`}>
-                      {title}
+        <div className="wowmen-third-container">
+          <AwesomeSlider fillParent>
+            <div className="wowmen-third">
+              <div className="main">
+                <img src="/images/wowmenAcademy/thirdSection/pink-background.png" alt="pink-background" className="background" />
+                <div className="content">
+                  {thirdAsset.map(({ title, img}) => (
+                    <div className={title === 'about' ? 'about no-bg' : title} key={title}>
+                      <img src={`/images/wowmenAcademy/thirdSection/${img}`} alt={title} className={`${title}-img`} />
+                      {title.slice(0,2) !== 'ww' && (
+                        <div className={`${title}-text`}>
+                          {title}
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section id="value" className="detail-section value-section">
-          <div className="detail-title">
-            <img src="/images/wowmenAcademy/thirdSection/taro-pacman.svg" alt="value" className="values-img" />
-            <div className="detail-text value-logo">
-              Values
-            </div>
-          </div>
-          {valueSectionAsset.map((props, key) => (
-            <img key={key} { ...props} />
-          ))}
-        </section>
-        <section id="vision" className="detail-section vision-section">
-          <div className="detail-title vision-logo-title">
-            <img src="/images/wowmenAcademy/thirdSection/orange-ellipse.svg" alt="value" className="values-img" />
-            <div className="detail-text vision-logo">
-              Vision
-            </div>
-          </div>
-          <div className="section-title vision-title">
-            <h5>All women have big dreams</h5>
-            <h3>and so do we.</h3>
-          </div>
-          {Array.from(Array(4).keys()).map((item) => (
-            <div key={item} className="circle" />
-          ))}
-          <div className="vision-board">
-            {Array.from(Array(4).keys()).map((item) => (
-              <div key={item} className="nail" />
-            ))}
-            {vision.map((item: string, idx: number) => (
-              <div className="vision-item" key={idx}>
-                <div className="vision-img">
-                  <img
-                    src="/images/wowmenAcademy/thirdSection/orange-flower.svg"
-                    alt=""
-                    className="orange-flower"
-                  />
-                  <div className="vision-num">{idx + 1}</div>
-                </div>
-                <div className="vision-desc">
-                  {item}
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+            <div id="value" className="detail-section value-section">
+              <div className="detail-title">
+                <img src="/images/wowmenAcademy/thirdSection/taro-pacman.svg" alt="value" className="values-img" />
+                <div className="detail-text value-logo">
+              Values
+                </div>
+              </div>
+              {valueSectionAsset.map((props, key) => (
+                <img key={key} { ...props} />
+              ))}
+            </div>
+            <div id="vision" className="detail-section vision-section">
+              <div className="detail-title vision-logo-title">
+                <img src="/images/wowmenAcademy/thirdSection/orange-ellipse.svg" alt="value" className="values-img" />
+                <div className="detail-text vision-logo">
+              Vision
+                </div>
+              </div>
+              <div className="section-title vision-title">
+                <h5>All women have big dreams</h5>
+                <h3>and so do we.</h3>
+              </div>
+              {Array.from(Array(4).keys()).map((item) => (
+                <div key={item} className="circle" />
+              ))}
+              <div className="vision-board">
+                {Array.from(Array(4).keys()).map((item) => (
+                  <div key={item} className="nail" />
+                ))}
+                {vision.map((item: string, idx: number) => (
+                  <div className="vision-item" key={idx}>
+                    <div className="vision-img">
+                      <img
+                        src="/images/wowmenAcademy/thirdSection/orange-flower.svg"
+                        alt=""
+                        className="orange-flower"
+                      />
+                      <div className="vision-num">{idx + 1}</div>
+                    </div>
+                    <div className="vision-desc">
+                      {item}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AwesomeSlider>
+        </div>
+        
         <div className="wowmen-learning">
           <h1>Our Learning Library</h1>
           <div className="wowmen-learning-content">
