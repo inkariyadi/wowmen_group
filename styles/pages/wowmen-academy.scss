@@ -1,6 +1,6 @@
 .wowmen{
     background-color: $fanta;
-    
+
     &-top{
         font-family: $poppins-font;
         align-items: center;
@@ -390,10 +390,22 @@
                     left: 5%;
                 }
 
-                @media (min-width: 589px) {
+                @media (min-width: 768px) {
                     .ww-1 {
                         top: 10%;
                         right: -20%;
+                    }
+    
+                    .ww-2 {
+                        top: 80%;
+                        left: -2.5%;
+                    }
+                }
+
+                @media (min-width: 589px) {
+                    .ww-1 {
+                        top: 10%;
+                        right: -16%;
                     }
     
                     .ww-2 {
@@ -422,7 +434,7 @@
 
                     @media (max-width: 768px) {
                         flex: 0 0 30%;
-                        min-width: 160px;
+                        min-width: 180px;
                     }
 
                     @media (max-width: 464px) {
