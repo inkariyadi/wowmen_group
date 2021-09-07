@@ -2,7 +2,7 @@
 import React from 'react';
 
 interface Props {
-    type: ('pink-square' | 'green-rectangle' | 'yellow-circle-large' | 'yellow-circle-medium' | 'yellow-circle-small'),
+    type: ('pink-square' | 'green-rectangle' | 'yellow-circle'),
     imageSRC?: string,
     imageALT?: string,
     href?: string,

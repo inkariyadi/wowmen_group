@@ -1,9 +1,18 @@
 // Import Modules
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+
+// Import Components
 import LibraryCard from 'components/LibraryCard';
 
 function About () {
+  const router = useRouter();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const landingAset = [
     {styleName: 'wowmen-top-img wowmen-top-img-1', src: 'images/wowmenAcademy/small-white-star.svg', alt: 'small white star'},
     {styleName: 'wowmen-top-img wowmen-top-img-2', src: 'images/wowmenAcademy/red-slayer.svg', alt: 'red slayer'},
@@ -26,6 +35,80 @@ function About () {
     {styleName: 'wowmen-second-left-img wowmen-second-left-img-5', src: 'images/wowmenAcademy/pink-diamond.svg', alt: 'pink diamond'},
     {styleName: 'wowmen-second-left-img wowmen-second-left-img-6', src: 'images/wowmenAcademy/blue-peer.svg', alt: 'blue peer'},
   ];
+
+  const thirdAsset = [
+    {
+      title: 'values',
+      img: 'taro-pacman.svg',
+    },
+    {
+      title: 'about',
+      img: 'blue-star.svg',
+    },
+    {
+      title: 'mission',
+      img: 'green-triangle.svg',
+    },
+    {
+      title: 'vision',
+      img: 'orange-ellipse.svg',
+    },
+    {
+      title: 'ww-1',
+      img: 'white-wind.svg',
+    },
+    {
+      title: 'ww-2',
+      img: 'white-wind.svg',
+    },
+  ];
+
+  const valueSectionAsset = [
+    {
+      src: '/images/wowmenAcademy/thirdSection/empower.svg',
+      alt: 'empower-title',
+      className: 'section-title value-title',
+    },
+    {
+      src: '/images/wowmenAcademy/thirdSection/value-detail.svg',
+      alt: 'empower-detail',
+      className: 'empower-detail',
+    },
+    {
+      src: '/images/wowmenAcademy/thirdSection/mini-green-triangle.svg',
+      alt: 'green-mini-triangle',
+      className: 'green-mini-triangle',
+    },
+    {
+      src: '/images/wowmenAcademy/thirdSection/blue-worm.svg',
+      alt: 'blue-worm',
+      className: 'blue-worm',
+    },
+    {
+      src: '/images/wowmenAcademy/thirdSection/yellow-star.svg',
+      alt: 'yellow-star',
+      className: 'yellow-star',
+    },
+    {
+      src: '/images/wowmenAcademy/thirdSection/half-pink-circle.svg',
+      alt: 'half-pink-circle',
+      className: 'half-pink-circle',
+    },
+  ];
+
+  const vision = [
+    'FADHIL MUHAMMAD RAFI',
+    'FADHIL RAFI',
+    'FADHIL MUHAMMAD',
+  ];
+
+  const handleSlide = (idx: number) => {
+    if (idx === 0) setCurrentSlide(1); // For Values
+    if (idx === 1) router.push('/about');
+    if (idx === 2) setCurrentSlide(3); // For Mission 
+    if (idx === 3) setCurrentSlide(2); // For Vision
+  };
+
   return(
     <>
       <Head>
@@ -56,18 +139,107 @@ function About () {
           </div>
           <div className="wowmen-second-right">
             <h1>Introduction</h1>
+            <img className="wowmen-second-right-small" src="/images/wowmenAcademy/rotate-background.svg"/>
             <p>
               <strong>Wowmen Academy</strong> is and education platform providing learning contents and programs (learning made easy!)<br/><br/>Focusing on building women’s capabilities to act on the world, fostering the development of women’s empowerment, and create future women leaders and changemakers.
             </p>
           </div>
         </div>
         {/* PADILL SECTION */}
-        <div className="wowmen-third">
-
+        <div className="wowmen-third-container">
+          <AwesomeSlider
+            selected={currentSlide}
+            fillParent
+            animation="cubeAnimation"
+          >
+            <div className="wowmen-third">
+              <div className="main">
+                <img src="/images/wowmenAcademy/thirdSection/pink-background.png" alt="pink-background" className="background" />
+                <div className="content">
+                  {thirdAsset.map(({ title, img }, idx) => (
+                    <div
+                      className={title === 'about' ? 'about no-bg' : title}
+                      key={title}
+                      onClick={() => handleSlide(idx)}
+                    >
+                      <img src={`/images/wowmenAcademy/thirdSection/${img}`} alt={title} className={`${title}-img`} />
+                      {title.slice(0,2) !== 'ww' && (
+                        <div className={`${title}-text`}>
+                          {title}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div id="value" className="detail-section value-section">
+              <div className="detail-title">
+                <img src="/images/wowmenAcademy/thirdSection/taro-pacman.svg" alt="value" className="values-img" />
+                <div className="detail-text value-logo">
+                  Values
+                </div>
+              </div>
+              {valueSectionAsset.map((props, key) => (
+                <img key={key} { ...props} />
+              ))}
+            </div>
+            <div id="vision" className="detail-section vision-section">
+              <div className="detail-title vision-logo-title">
+                <img src="/images/wowmenAcademy/thirdSection/orange-ellipse.svg" alt="value" className="values-img" />
+                <div className="detail-text vision-logo">
+                  Vision
+                </div>
+              </div>
+              <div className="section-title vision-title">
+                <h5>All women have big dreams</h5>
+                <h3>and so do we.</h3>
+              </div>
+              {Array.from(Array(4).keys()).map((item) => (
+                <div key={item} className="circle" />
+              ))}
+              <div className="vision-board">
+                {Array.from(Array(4).keys()).map((item) => (
+                  <div key={item} className="nail" />
+                ))}
+                {vision.map((item: string, idx: number) => (
+                  <div className="vision-item" key={idx}>
+                    <div className="vision-img">
+                      <img
+                        src="/images/wowmenAcademy/thirdSection/orange-flower.svg"
+                        alt=""
+                        className="orange-flower"
+                      />
+                      <div className="vision-num">{idx + 1}</div>
+                    </div>
+                    <div className="vision-desc">
+                      {item}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mission-section">
+              <img className="mission-section-img-1" src="images/wowmenAcademy/thirdSection/peach-star.svg" alt="peach-1" />
+              <div className="mission-section-title">
+                <h1>Mission</h1>
+              </div>
+              <img className="mission-section-img-2" src="images/wowmenAcademy/thirdSection/peach-three-star.svg" alt="peach-2" />
+              <img className="mission-section-img-3" src="images/wowmenAcademy/thirdSection/peach-bean.svg" alt="peach-3" />
+              <img className="mission-section-img-4" src="images/wowmenAcademy/thirdSection/purple-star.svg" alt="purple-4" />
+              <div className="mission-section-content">
+                <h1>Educational Contents</h1>
+                <h1>Collaborative Learning</h1>
+                <h1>and more upcoming programs</h1>
+              </div>
+            </div>
+          </AwesomeSlider>
         </div>
+        
         <div className="wowmen-learning">
           <h1>Our Learning Library</h1>
           <div className="wowmen-learning-content">
+            {/* TODO: change attribute with fetched data or real data */}
             <LibraryCard title="Lesson Plans" desc="Our ready-made lesson plans make it easy for classroom educators." buttontxt="GET MY PLAN" href="/" />
             <LibraryCard title="Tips" desc="More tips about Education!" buttontxt="GET HERE" href="/" />
             <LibraryCard title="Inspiring" desc="xxxxxxxxxxx" buttontxt="GET TO KNOW" href="/" />

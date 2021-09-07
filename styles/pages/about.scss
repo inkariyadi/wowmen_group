@@ -59,7 +59,7 @@
         }
     }
     &-second{
-        padding: 10vh 0;
+        padding: 10vw 0;
         background-color: $miniblue;
         text-align: center;
         justify-content: center;
@@ -72,15 +72,19 @@
         }
         &-content{
             display: grid;
-            padding: 5vh 15vw 0;
-            grid-template-columns: max-content 1fr;
+            padding: 5vw 20vw 0;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 5vw;
             position: relative;
             bottom: 800px;
-            // margin-bottom: -80vh;
-            @media screen and (max-width: 1200px) {
+            margin-bottom: -40vw;
+            @media screen and (max-width: 1700px) {
+                padding: 5vw 15vw 0;
+            }
+            @media screen and (max-width: 1280px) {
                 bottom: 750px;
+                padding: 5vw 5vw 0;
             }
             @media screen and (max-width: 1024px) {
                 bottom: 650px;
@@ -92,25 +96,45 @@
                 display: flex;
                 flex-direction: column;
                 bottom: 500px;
-                padding: 5vh 20vw 0;
+                padding: 5vw 20vw 0;
             }
             @media screen and (max-width: 610px) {
-                bottom: 380px;
+                bottom: 450px;
             }
             @media screen and (max-width: 550px) {
-                bottom: 300px;
+                bottom: 430px;
             }
             @media screen and (max-width: 480px) {
-                bottom: 200px;
-                padding: 5vh 25vw 0;
+                bottom: 420px;
+                padding: 5vw 20vw 0;
+                margin-bottom: -60vw;
+            }
+            @media screen and (max-width: 400px) {
+                bottom: 360px;
+                margin-bottom: -70vw;
+            }
+            @media screen and (max-width: 320px) {
+                bottom: 320px;
+                margin-bottom: -80vw;
             }
             & > p{
-                font-size: clamp(15px, 3vw, 19px);
+                font-size: clamp(13px, 3vw, 19px);
                 text-align: left;
+                @media screen and (max-width: 768px) {
+                    padding: 0 5vw;
+                    margin-top: -10vw;
+                }
+                @media screen and (max-width: 480px) {
+                    padding: 0;
+                }
+                @media screen and (max-width: 400px) {
+                    margin-top: -18vw;
+                }
             }
             &-title{
-                margin-top: 5vh;
-                margin-bottom: -10vh;
+                margin-top: 2vw;
+                margin-bottom: -3vw;
+                margin-left: -3vw;
                 @media screen and (max-width: 768px) {
                     margin-top: -50vw;
                 }
@@ -127,7 +151,10 @@
                     transform: rotate(20deg);
                     @media screen and (max-width: 768px) {
                         left: 5vw;
-                        top: 5vh;
+                        top: 3vw;
+                    }
+                    @media screen and (max-width: 480px) {
+                        top: 2vw;
                     }
                 }
                 & > h1:nth-child(2){
@@ -143,7 +170,7 @@
                 & > p{
                     position: relative;
                     z-index: 1;
-                    top: -12vh;
+                    top: -6vw;
                     left: -6vw;
                     font-size: clamp(30px, 10vw, 70px);
                     color: $greentea;
@@ -151,35 +178,49 @@
                     background-image: url('/images/about/left-star.svg');
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: clamp(40%, 50vw, 20%);;
-                    padding: 10vh 0;
+                    background-size: clamp(40%, 50vw, 20%);
+                    padding: 5vw 0;
                     margin: 0;
                     @media screen and (max-width: 768px) {
+                        background-size: 60%;
                         left: -15vw;
+                    }
+                    @media screen and (max-width: 480px) {
+                        background-size: 45%;
                     }
                 }
                 & > h1:nth-child(4){
                     position: relative;
                     z-index: 2;
-                    margin-top: -35vh;
+                    margin-top: -17vw;
                     margin-left: 15vw;    
                     font-weight: 500;
                     font-size: clamp(37px, 10vw, 120px);
                     color: $greentea;
                     @media screen and (max-width: 768px) {
-                        margin-top: -45vh;
+                        margin-top: -25vw;
                         margin-left: 15vw;  
                     }
                 }
                 & > img{
                     position: relative;
                     z-index: 1;
-                    top: -42vh;
+                    top: -15vw;
                     left: 13vw;
                     width: clamp(40%, 50vw, 20%);
+                    @media screen and (max-width: 1700px) {
+                        top: -18vw;
+                    }
+                    @media screen and (max-width: 1024px) {
+                        top: -25vw;
+                    }
                     @media screen and (max-width: 768px) {
-                        top: -30vh;
+                        top: -25vw;
                         left: 15vw;
+                        width: 50%;
+                    }
+                    @media screen and (max-width: 480px) {
+                        width: 40%;
                     }
                 }
             }
@@ -350,6 +391,7 @@
                 > img{
                     width: 100%;
                     padding: 5vw 0 2vw;
+                    border-radius: 50%;
                     @media screen and (max-width: 768px) {
                         width: 75%;
                     }
