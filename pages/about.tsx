@@ -122,7 +122,7 @@ function About () {
               <div 
                 key={value.id} 
                 className="about-last-content-item"
-                onMouseEnter={e => onHover(value.id)}
+                onMouseEnter={() => onHover(value.id)}
                 onMouseLeave={onLeave}>
                 {hoverIdx==value.id?
                   <p className="about-last-content-item-desc">{value.description}</p>

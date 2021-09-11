@@ -1,6 +1,8 @@
 // Import Modules
 import React, { Dispatch, SetStateAction, useState, useEffect } from 'react';
 import NumberFormat from 'react-number-format';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 // Import Interface
 import Product from 'interface/Product';
@@ -16,6 +18,11 @@ interface Props {
   productList: Product[],
   orderData: OrderData,
   setOrderData: Dispatch<SetStateAction<OrderData>>
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Alert(props: any) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
  
 const OrderForm : React.FC<Props> = (props) => {
@@ -33,6 +40,9 @@ const OrderForm : React.FC<Props> = (props) => {
   } = orderData;
 
   const [emailHelper, setEmailHelper] = useState<string>('');
+  const [isOpenSnackbar, setIsOpenSnackbar] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
@@ -60,17 +70,30 @@ const OrderForm : React.FC<Props> = (props) => {
   };
   
   const handleSubmit = () => {
-    postMerchandiseOrder({
+    const data = {
       name: fullName,
       email: email,
       address: fullAddress,
-      phone_number: phoneNumber,
+      phone_number: parseInt(phoneNumber),
       merchandises: productList.map((value) => ({
         qty: value.num,
         price: value.price,
         product: value.name,
       })),
-    }).then(()=>console.log('berhasil')).catch(()=>console.log('gagal'));
+    };
+    postMerchandiseOrder(data)
+      .then(()=>{
+        console.log('berhasil');
+        setIsSuccess(true);
+      })
+      .catch((err)=>{
+        console.log(err);
+        console.log('gagal');
+        setIsSuccess(false);
+      })
+      .finally(()=>{
+        setIsOpenSnackbar(true);
+      });
   };
 
   return (
@@ -83,7 +106,7 @@ const OrderForm : React.FC<Props> = (props) => {
         <label>Full Address</label>
         <input name="fullAddress" value={fullAddress} onChange={handleChange} />
         <label>Phone Number</label>
-        <input name="phoneNumber" value={phoneNumber} onChange={handleChange} />
+        <input type="number" name="phoneNumber" value={phoneNumber} onChange={handleChange} />
       </div>
       <div className="order-form-summary">
         <h6>Order Summary</h6>
@@ -143,6 +166,11 @@ const OrderForm : React.FC<Props> = (props) => {
           </button>
         </div>
       </div>
+      <Snackbar open={isOpenSnackbar} autoHideDuration={2000} onClose={() => setIsOpenSnackbar(false)}>
+        <Alert onClose={() => setIsOpenSnackbar(false)} severity={isSuccess ? 'success' : 'error'} >
+          {isSuccess ? 'Succesfully order' : 'Order failed. Please try again'}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
