@@ -9,6 +9,9 @@ import OrderData from 'interface/OrderData';
 // Import Utils
 import { validEmail } from 'utils/string';
 
+// Import API
+import { postMerchandiseOrder } from 'utils/api';
+
 interface Props {
   productList: Product[],
   orderData: OrderData,
@@ -54,6 +57,20 @@ const OrderForm : React.FC<Props> = (props) => {
     });
     
     return total;
+  };
+  
+  const handleSubmit = () => {
+    postMerchandiseOrder({
+      name: fullName,
+      email: email,
+      address: fullAddress,
+      phone_number: phoneNumber,
+      merchandises: productList.map((value) => ({
+        qty: value.num,
+        price: value.price,
+        product: value.name,
+      })),
+    }).then(()=>console.log('berhasil')).catch(()=>console.log('gagal'));
   };
 
   return (
@@ -121,7 +138,7 @@ const OrderForm : React.FC<Props> = (props) => {
             decimalSeparator=","
             thousandSeparator="."
           />
-          <button className="checkout-btn">
+          <button onClick={handleSubmit} className="checkout-btn">
             Checkout
           </button>
         </div>

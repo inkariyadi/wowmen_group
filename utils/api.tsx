@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
 import axios from 'axios';
 
 
@@ -20,9 +22,9 @@ export const getMerchandises = () => {
  */
 export const postMerchandiseOrder = (data: any) => {
   return axios({
-    url: `${PREFIX}/merchandises`,
+    url: `${PREFIX}/orders`,
     method: 'post',
-    data,
+    data: data,
   });
 };
 
