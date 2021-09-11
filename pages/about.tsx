@@ -1,6 +1,11 @@
 // Import Modules
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
+
+// Import Interface
+import Member from 'interface/Member';
+import { getMembers } from 'utils/api';
 
 function About () {
   const pilars = [
@@ -16,63 +21,39 @@ function About () {
   ];
   const [hoverIdx, setHoverIdx] = useState(-1);
 
-  // TODO: Change dummy data to fetched data
-  const [teams, setTeams] = useState([
-    {
-      src: 'images/about/ceo-1.svg', 
-      name: 'Syahrani Thomasri', 
-      position: 'Founder & CEO of Wowmen Group (Lead of Wowmen Group Media)',
-      desc: 'Hi! I am Caca. I am currently a student at School of Business and Management ITB and Hull University UK, majoring in International Business and Financial Management. I am very passionate about education and learning is inevitable for me. I tried to create a better platform of learning in Indonesia, therefore I and my team created several businesses and communities in that area, which are Wowmen Group and Logika Creative. I also Co-founded Mimpi Muda when she was in High School that aimed to give Jakarta’s youths a platform to share their thoughts regarding education and social issues.I am also the senior copywriter of Relearn Indonesia. I have my own vision for herself and the people around her, therefore She’s become very ambitious to create a better and better platform for Indonesia.',
-    },
-    {
-      src: 'images/about/ceo-2.svg', 
-      name: 'Moza Abel', 
-      position: 'Co-Founder & Co-CEO Wowmen Group (Lead of Wowmen Academy)',
-      desc: 'Hello, I\'m Abel, an undergraduate student majoring in Management at the University of Indonesia. I\'m a passionate learner that likes to explore new things and develop myself both personally and professionally. Being a part of Wowmen Group from the start was one of the best decisions I\'ve ever made. Building Wowmen Group together with other great women enhances my willingness to learn and grow with them. Currently, we also building Wowmen Academy, which hopefully can also develop and educate people through the contents and programs that we have.',
-    },
-    {
-      src: 'images/about/ceo-3.svg', 
-      name: 'Putri Thahira', 
-      position: 'Senior Content Strategist of Wowmen Academy',
-      desc: 'Hi! I am Thahira, an undergraduate student from Parahyangan Catholic University majoring in Mathematics. Involving myself and being active in many social activities with a vision of a better future especially in Education and Creative Industry is what I love to do. I thrive to achieve greatness in all possible ways and I am always willing to learn new skills in order to enhance my abilities. By joining Wowmen Academy and being their Senior Content Strategist, I believe that I am one step closer to achieving my dream which is to further empower women in Indonesia, then the entire world.',
-    },
-    {
-      src: 'images/about/ceo-2.svg', 
-      name: 'Moza Abel', 
-      position: 'Co-Founder & Co-CEO Wowmen Group (Lead of Wowmen Academy)',
-      desc: 'Hello, I\'m Abel, an undergraduate student majoring in Management at the University of Indonesia. I\'m a passionate learner that likes to explore new things and develop myself both personally and professionally. Being a part of Wowmen Group from the start was one of the best decisions I\'ve ever made. Building Wowmen Group together with other great women enhances my willingness to learn and grow with them. Currently, we also building Wowmen Academy, which hopefully can also develop and educate people through the contents and programs that we have.',
-    },
-    {
-      src: 'images/about/ceo-1.svg', 
-      name: 'Syahrani Thomasri', 
-      position: 'Founder & CEO of Wowmen Group (Lead of Wowmen Group Media)',
-      desc: 'Hi! I am Caca. I am currently a student at School of Business and Management ITB and Hull University UK, majoring in International Business and Financial Management. I am very passionate about education and learning is inevitable for me. I tried to create a better platform of learning in Indonesia, therefore I and my team created several businesses and communities in that area, which are Wowmen Group and Logika Creative. I also Co-founded Mimpi Muda when she was in High School that aimed to give Jakarta’s youths a platform to share their thoughts regarding education and social issues.I am also the senior copywriter of Relearn Indonesia. I have my own vision for herself and the people around her, therefore She’s become very ambitious to create a better and better platform for Indonesia.',
-    },
-    {
-      src: 'images/about/ceo-2.svg', 
-      name: 'Moza Abel', 
-      position: 'Co-Founder & Co-CEO Wowmen Group (Lead of Wowmen Academy)',
-      desc: 'Hello, I\'m Abel, an undergraduate student majoring in Management at the University of Indonesia. I\'m a passionate learner that likes to explore new things and develop myself both personally and professionally. Being a part of Wowmen Group from the start was one of the best decisions I\'ve ever made. Building Wowmen Group together with other great women enhances my willingness to learn and grow with them. Currently, we also building Wowmen Academy, which hopefully can also develop and educate people through the contents and programs that we have.',
-    },
-    {
-      src: 'images/about/ceo-1.svg', 
-      name: 'Syahrani Thomasri', 
-      position: 'Founder & CEO of Wowmen Group (Lead of Wowmen Group Media)',
-      desc: 'Hi! I am Caca. I am currently a student at School of Business and Management ITB and Hull University UK, majoring in International Business and Financial Management. I am very passionate about education and learning is inevitable for me. I tried to create a better platform of learning in Indonesia, therefore I and my team created several businesses and communities in that area, which are Wowmen Group and Logika Creative. I also Co-founded Mimpi Muda when she was in High School that aimed to give Jakarta’s youths a platform to share their thoughts regarding education and social issues.I am also the senior copywriter of Relearn Indonesia. I have my own vision for herself and the people around her, therefore She’s become very ambitious to create a better and better platform for Indonesia.',
-    },
-    {
-      src: 'images/about/ceo-2.svg', 
-      name: 'Moza Abel', 
-      position: 'Co-Founder & Co-CEO Wowmen Group (Lead of Wowmen Academy)',
-      desc: 'Hello, I\'m Abel, an undergraduate student majoring in Management at the University of Indonesia. I\'m a passionate learner that likes to explore new things and develop myself both personally and professionally. Being a part of Wowmen Group from the start was one of the best decisions I\'ve ever made. Building Wowmen Group together with other great women enhances my willingness to learn and grow with them. Currently, we also building Wowmen Academy, which hopefully can also develop and educate people through the contents and programs that we have.',
-    },
-  ]);
+  const [members,setMembers] = useState<Member[]> ([]);
+  const API_URL = 'http://localhost:1337';
+  
+  useEffect(()=>{
+    getMembers()
+      .then((res) => {
+        const data = res.data.map((value: Member) => ({
+          id: value.id,
+          name: value.name,
+          title: value.title,
+          photo: {
+            url: value.photo.url,
+            width: value.photo.width,
+            height: value.photo.height,
+          },
+          description: value.description,
+        }));
+        
+        setMembers(data);
+        console.log('Success getting members');
+      })
+      .catch(() => {
+        console.log('Something wrong with getting members');
+      });
+  },[]);
+  
   const onHover = (index: number) => {
     setHoverIdx(index);
   };
   const onLeave = () => {
     setHoverIdx(-1);
   };
+  
   return(
     <>
       <Head>
@@ -137,20 +118,24 @@ function About () {
             <img src="images/about/mountain-star.svg" alt="mountain star" />
           </div>
           <div className="about-last-content">
-            {/* TODO: change with real data */}
-            {teams.map(({ src, name, position, desc }, i) => (
+            {members.map(value =>(
               <div 
-                key={name} 
+                key={value.id} 
                 className="about-last-content-item"
-                onMouseEnter={e => onHover(i)}
+                onMouseEnter={e => onHover(value.id)}
                 onMouseLeave={onLeave}>
-                {hoverIdx==i?
-                  <p className="about-last-content-item-desc">{desc}</p>
+                {hoverIdx==value.id?
+                  <p className="about-last-content-item-desc">{value.description}</p>
                   :
-                  <img src={src} alt={name}/>
+                  <Image
+                    src={API_URL + value.photo.url}
+                    alt="Picture of the author"
+                    width={220}
+                    height={228}
+                  />
                 }
-                <h6>{name}</h6>
-                <p className="about-last-content-item-position">{position}</p>
+                <h6>{value.name}</h6>
+                <p className="about-last-content-item-position">{value.title}</p>
               </div>
             ))}
           </div>

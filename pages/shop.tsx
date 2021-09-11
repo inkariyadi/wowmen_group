@@ -38,39 +38,6 @@ const carouselProps = (color: string) => ({
 });
 
 function Shop () {
-  const [firstMerch, setFirstMerch] = useState<Product>({
-    id: 1,
-    name: 'Merch 1',
-    num: 0,
-    price: 300000,
-    category: 'Food',
-    isLocalBrand: false,
-  });
-  const [secondMerch, setSecondMerch] = useState<Product>({
-    id: 2,
-    name: 'Merch 2',
-    num: 0,
-    price: 300000,
-    category: 'Food',
-    isLocalBrand: false,
-  });
-  const [firstLocal, setFirstLocal] = useState<Product>({
-    id: 3,
-    name: 'Local 1',
-    num: 0,
-    price: 300000,
-    category: 'Food',
-    isLocalBrand: false,
-  });
-  const [secondLocal, setSecondLocal] = useState<Product>({
-    id: 4,
-    name: 'Merch 2',
-    num: 0,
-    price: 300000,
-    category: 'Food',
-    isLocalBrand: false,
-  });
-  
   const [merchandise,setMerchandise] = useState<Product[]> ([]);
  
   const [merchData, setMerchData] = useState<OrderData>({
@@ -214,6 +181,6 @@ function Shop () {
       </div>
     </>
   );
-};
+}
 
 export default Shop;
