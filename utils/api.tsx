@@ -61,3 +61,14 @@ export const getTopArticles = (params: any) => {
     params,
   });
 };
+
+/**
+ * Get link in programs
+ * @param {*} get
+ */
+export const getFormLink = () => {
+  return axios({
+    url: `${PREFIX}/form-link`,
+    method: 'get',
+  });
+};

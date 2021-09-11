@@ -1,10 +1,25 @@
 // Import Modules
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 // Import Components
 
+// Import Api
+import { getFormLink } from 'utils/api';
  
 const Programs: React.SFC = () => {
+  const [link, setLink] = useState('');
+  
+  useEffect(()=>{
+    getFormLink()
+      .then((res) => {
+        setLink(res.data.link);
+        console.log('Success getting merchandises');
+      })
+      .catch(() => {
+        console.log('Something wrong with getting form link in programs');
+      });
+  }, []);
+  
   return (
     <div className="program">
       <section className="program-first section-container">
@@ -25,7 +40,7 @@ const Programs: React.SFC = () => {
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
           </p>
           <div className="curcol-corner-join-btn">
-            <div>Click Here <br /> to Join!</div>
+            <a href={link} target="_blank" rel="noreferrer"> Click Here<br /> to Join!</a>
           </div>
         </div>
       </section>
