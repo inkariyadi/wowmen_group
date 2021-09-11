@@ -1,5 +1,5 @@
 // Import Modules
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import Carousel from 'react-material-ui-carousel';
 import Head from 'next/head';
 import { ArrowForwardIos, ArrowBackIos } from '@material-ui/icons';
@@ -12,6 +12,9 @@ import OrderForm from 'components/OrderForm';
 // Import Interface
 import Product from 'interface/Product';
 import OrderData from 'interface/OrderData';
+
+//Import API
+import { getMerchandises } from 'utils/api';
 
 const carouselProps = (color: string) => ({
   stopAutoPlayOnHover: true,
@@ -36,30 +39,40 @@ const carouselProps = (color: string) => ({
 
 function Shop () {
   const [firstMerch, setFirstMerch] = useState<Product>({
+    id: 1,
     name: 'Merch 1',
     num: 0,
     price: 300000,
     category: 'Food',
+    isLocalBrand: false,
   });
   const [secondMerch, setSecondMerch] = useState<Product>({
+    id: 2,
     name: 'Merch 2',
     num: 0,
     price: 300000,
     category: 'Food',
+    isLocalBrand: false,
   });
   const [firstLocal, setFirstLocal] = useState<Product>({
+    id: 3,
     name: 'Local 1',
     num: 0,
     price: 300000,
     category: 'Food',
+    isLocalBrand: false,
   });
   const [secondLocal, setSecondLocal] = useState<Product>({
+    id: 4,
     name: 'Merch 2',
     num: 0,
     price: 300000,
     category: 'Food',
+    isLocalBrand: false,
   });
-
+  
+  const [merchandise,setMerchandise] = useState<Product[]> ([]);
+ 
   const [merchData, setMerchData] = useState<OrderData>({
     fullName: '',
     fullAddress: '',
@@ -73,6 +86,32 @@ function Shop () {
     email: '',
     phoneNumber: '',
   });
+  
+  useEffect(()=>{
+    getMerchandises()
+      .then((res) => {
+        const data = res.data.map((value: Product) => ({
+          id: value.id,
+          name: value.name.toString(),
+          num: 0,
+          price: value.price,
+          category: value.category.toString(),
+          isLocalBrand: value.isLocalBrand,
+        }));
+        
+        setMerchandise(data);
+        console.log(merchandise);
+        console.log('Success getting merchandises');
+      })
+      .catch(() => {
+        console.log('Something wrong with getting merchandises');
+      });
+  },[]);
+  
+  useEffect(()=> {
+    
+    console.log(merchandise);
+  },[merchandise]);
 
   return (
     <>
@@ -101,41 +140,35 @@ function Shop () {
           <div className="our-merchandise">
             <Carousel { ...carouselProps('rgba(9, 13, 84, .4)') }>
               <div className="our-merchandise-left">
-                <div className="our-merchandise-left-item">
-                  <ProductCard
-                    name={firstMerch.name}
-                    num={firstMerch.num}
-                    price={firstMerch.price}
-                    category={firstMerch.category}
-                    setProduct={setFirstMerch}
-                  />
-                </div>
-                <div className="our-merchandise-left-item">
-                  <ProductCard
-                    name={secondMerch.name}
-                    num={secondMerch.num}
-                    price={secondMerch.price}
-                    category={secondMerch.category}
-                    setProduct={setSecondMerch}
-                  />
-                </div>
+                {merchandise.filter((value:Product) => !value.isLocalBrand).map((value: Product) => (
+                  <div className="our-merchandise-left-item" key={value.id}>
+                    <ProductCard
+                      id={value.id}
+                      name={value.name}
+                      num={value.num}
+                      price={value.price}
+                      category={value.category}
+                      merchandise={merchandise}
+                      setMerchandise={setMerchandise} />
+                  </div>
+                ))}
               </div>
             </Carousel>
             <div className="our-merchandise-right">
               <OrderForm
-                productList={[firstMerch, secondMerch].filter(({ num }) => num > 0)}
+                productList={merchandise.filter(({ num,isLocalBrand }) => num > 0 && !isLocalBrand)}
                 orderData={merchData}
                 setOrderData={setMerchData}
               />
             </div>
-          </div>
-          <div className="i-love-shopping">
-            <img className="i-love-shopping-image" src="/images/shop/orange-flower.png" />
-            <div className="i-love-shopping-text">
-              <h5>i love <br /> shopping!~</h5>
-              <img src="/images/shop/outline-love.png" />
-              <img src="/images/shop/outline-love.png" />
-              <img src="/images/shop/outline-love.png" />
+            <div className="i-love-shopping">
+              <img className="i-love-shopping-image" src="/images/shop/orange-flower.png" />
+              <div className="i-love-shopping-text">
+                <h5>i love <br /> shopping!~</h5>
+                <img src="/images/shop/outline-love.png" />
+                <img src="/images/shop/outline-love.png" />
+                <img src="/images/shop/outline-love.png" />
+              </div>
             </div>
           </div>
         </section>
@@ -153,32 +186,25 @@ function Shop () {
               <img className="kwetiau-img" src="/images/shop/kwetiau-img.png" alt="kwetiau"/>
               <Carousel { ...carouselProps('rgba(226, 142, 181, .4)') }>
                 <div className="our-merchandise-left">
-                  <div className="our-merchandise-left-item">
-                    <ProductCard
-                      secondary
-                      name={firstLocal.name}
-                      num={firstLocal.num}
-                      price={firstLocal.price}
-                      category={firstLocal.category}
-                      setProduct={setFirstLocal}
-                    />
-                  </div>
-                  <div className="our-merchandise-left-item">
-                    <ProductCard
-                      secondary
-                      name={secondLocal.name}
-                      num={secondLocal.num}
-                      price={secondLocal.price}
-                      category={secondLocal.category}
-                      setProduct={setSecondLocal}
-                    />
-                  </div>
+                  {merchandise.filter((value:Product) => value.isLocalBrand).map((value: Product) => (
+                    <div className="our-merchandise-left-item" key={value.id}>
+                      <ProductCard
+                        secondary
+                        id={value.id}
+                        name={value.name}
+                        num={value.num}
+                        price={value.price}
+                        category={value.category}
+                        merchandise={merchandise}
+                        setMerchandise={setMerchandise} />
+                    </div>
+                  ))}
                 </div>
               </Carousel>
             </div>
             <div className="our-merchandise-right">
               <OrderForm
-                productList={[firstLocal, secondLocal].filter(({ num }) => num > 0)}
+                productList={merchandise.filter(({ num,isLocalBrand }) => num > 0 && isLocalBrand)}
                 orderData={localData}
                 setOrderData={setLocalData}
               />
@@ -188,6 +214,6 @@ function Shop () {
       </div>
     </>
   );
-}
+};
 
 export default Shop;

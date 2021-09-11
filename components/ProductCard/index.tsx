@@ -1,5 +1,5 @@
 // Import Modules
-import React, { Dispatch, SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { GrAdd } from 'react-icons/gr';
 import { BiMinus } from 'react-icons/bi';
 import { AiFillCaretDown } from 'react-icons/ai';
@@ -9,42 +9,54 @@ import NumberFormat from 'react-number-format';
 import Product from 'interface/Product';
 
 interface Props {
+  id: number,
   image?: string,
   name: string,
   num: number,
   price: number,
   category: string,
   secondary?: boolean,
-  setProduct: Dispatch<SetStateAction<Product>>,
+  merchandise: Product[],
+  setMerchandise: Dispatch<SetStateAction<Product[]>>,
 }
 
 const ProductCard : React.FC<Props> = (props) => {
   const {
+    id,
     image,
     name,
     num,
     price,
     category,
     secondary,
-    setProduct,
+    merchandise,
+    setMerchandise,
   } = props;
 
   let className = 'product-card';
+  const [qty,setQty] = useState(num);
 
   if (secondary) className += ' secondary';
+  
+  useEffect(() => {
+    setMerchandise(
+      merchandise.map(product =>
+        product.id === id ? { ...product, num: qty } : product
+      )
+    );
+    console.log(qty);
+  }, [qty]);
 
   const handleAdd = () => {
-    setProduct((prev) => ({
-      ...prev,
-      num: num + 1,
-    }));
+    if(qty<10){
+      setQty(qty+1);
+    }
   };
 
   const handleSubstract = () => {
-    setProduct((prev) => ({
-      ...prev,
-      num: num > 0 ? num - 1 : num,
-    }));
+    if(qty>0){
+      setQty(qty-1);
+    }
   };
 
   return (

@@ -9,6 +9,9 @@ import OrderData from 'interface/OrderData';
 // Import Utils
 import { validEmail } from 'utils/string';
 
+// Import API
+import { postMerchandiseOrder } from 'utils/api';
+
 interface Props {
   productList: Product[],
   orderData: OrderData,
@@ -45,6 +48,30 @@ const OrderForm : React.FC<Props> = (props) => {
       else setEmailHelper('');
     } else setEmailHelper('');
   }, [email]);
+  
+  const countTotal = () => {
+    let total = 0;
+    
+    productList.forEach((value)=>{
+      total+=value.price * value.num;
+    });
+    
+    return total;
+  };
+  
+  const handleSubmit = () => {
+    postMerchandiseOrder({
+      name: fullName,
+      email: email,
+      address: fullAddress,
+      phone_number: phoneNumber,
+      merchandises: productList.map((value) => ({
+        qty: value.num,
+        price: value.price,
+        product: value.name,
+      })),
+    }).then(()=>console.log('berhasil')).catch(()=>console.log('gagal'));
+  };
 
   return (
     <div className="order-form">
@@ -74,7 +101,7 @@ const OrderForm : React.FC<Props> = (props) => {
             </tr>
             {productList.map((product: Product, idx: number) => (
               <tr key={idx}>
-                <td>{idx}</td>
+                <td>{idx+1}</td>
                 <td>{product.name}</td>
                 <td>
                   <NumberFormat
@@ -106,12 +133,12 @@ const OrderForm : React.FC<Props> = (props) => {
           <h6>Total</h6>
           <NumberFormat
             displayType="text"
-            value={0}
+            value={countTotal()}
             prefix="Rp"
             decimalSeparator=","
             thousandSeparator="."
           />
-          <button className="checkout-btn">
+          <button onClick={handleSubmit} className="checkout-btn">
             Checkout
           </button>
         </div>
