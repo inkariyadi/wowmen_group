@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 
-const PREFIX = 'http://localhost:1337';
+export const API_URL = 'https://strapi-wowmen.herokuapp.com';
 
 /**
  * Get all list of merchandises 
@@ -11,7 +11,7 @@ const PREFIX = 'http://localhost:1337';
  */
 export const getMerchandises = () => {
   return axios({
-    url: `${PREFIX}/merchandises`,
+    url: `${API_URL}/merchandises`,
     method: 'get',
   });
 };
@@ -22,7 +22,7 @@ export const getMerchandises = () => {
  */
 export const postMerchandiseOrder = (data: any) => {
   return axios({
-    url: `${PREFIX}/orders`,
+    url: `${API_URL}/orders`,
     method: 'post',
     data: data,
   });
@@ -34,7 +34,18 @@ export const postMerchandiseOrder = (data: any) => {
  */
 export const getMembers = () => {
   return axios({
-    url: `${PREFIX}/members`,
+    url: `${API_URL}/members`,
+    method: 'get',
+  });
+};
+
+/**
+ * Get all list of members
+ * @param {*} get
+ */
+export const getMemberById = (id: number) => {
+  return axios({
+    url: `${API_URL}/members/${id}`,
     method: 'get',
   });
 };
@@ -45,20 +56,41 @@ export const getMembers = () => {
  */
 export const getArticles = () => {
   return axios({
-    url: `${PREFIX}/articles`,
+    url: `${API_URL}/articles`,
     method: 'get',
   });
 };
 
 /**
- * Get all list of articles
+ * Get Top Article
  * @param {*} get
  */
-export const getTopArticles = (params: any) => {
+export const getTopArticle = () => {
   return axios({
-    url: `${PREFIX}/articles`,
+    url: `${API_URL}/top-article`,
     method: 'get',
-    params,
+  });
+};
+
+/**
+ * Get Top Article below lifestyle article
+ * @param {*} get
+ */
+export const getTopArticle2= () => {
+  return axios({
+    url: `${API_URL}/top-article-2`,
+    method: 'get',
+  });
+};
+
+/**
+ * Get Top Article below lifestyle article
+ * @param {*} get
+ */
+export const getLifestyleArticles= () => {
+  return axios({
+    url: `${API_URL}/lifestyle-article`,
+    method: 'get',
   });
 };
 
@@ -68,7 +100,7 @@ export const getTopArticles = (params: any) => {
  */
 export const getFormLink = () => {
   return axios({
-    url: `${PREFIX}/form-link`,
+    url: `${API_URL}/form-link`,
     method: 'get',
   });
 };

@@ -34,8 +34,8 @@
       }
 
       &-image {
-        width: 100%;
         position: relative;
+        border-radius: 36px;
 
         &-dummy {
           width: 100%;
@@ -305,6 +305,7 @@
       &-image {
         width: 100%;
         position: relative;
+        border-radius: 36px;
 
         .decor {
           position: absolute;

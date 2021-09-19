@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 // Import Interface
 import Member from 'interface/Member';
-import { getMembers } from 'utils/api';
+import { API_URL, getMembers } from 'utils/api';
 
 function About () {
   const pilars = [
@@ -22,7 +22,6 @@ function About () {
   const [hoverIdx, setHoverIdx] = useState(-1);
 
   const [members,setMembers] = useState<Member[]> ([]);
-  const API_URL = 'http://localhost:1337';
   
   useEffect(()=>{
     getMembers()
