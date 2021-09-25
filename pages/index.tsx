@@ -72,8 +72,8 @@ function Home() {
           <div className="home-page-third-socmed">
             <div className="home-page-third-socmed-items">
               <InstagramEmbed
-                url='https://www.instagram.com/p/CPrljxAsKz1/'
-                clientAccessToken='IGQVJWdndGVmFJVjcxM1ZA0RG1veVBHek9ObXdvdGh1T3hzYzd1ZA3F6WXFnd2x6NXkxdTNCekpLUmRoYTg3eC1tNVRhal9tMDdKWlpTWXZAraFVlMFpGSkQxNUFGYVJ0YWdIVklYWHJOeU5Jd3ZAEWTlMRAZDZD'
+                url='https://www.instagram.com/p/CANVTsvgAeS/'
+                clientAccessToken='IGQVJYWWRlVERXOXpNa1BLRGJDel9Tcnl6VG9TRFF4NWVqanNvclpPN3YxWkg1Tm02T09fMW5yVHp5Vll2QS1nbkxXTlF5U0VTSTU5eC1yZADJKb2h4SUlidnRadExidUh4SnYwYmhsQ1VYOUhKT1FmagZDZD'
                 maxWidth={320}
                 hideCaption={false}
                 containerTagName='div'
