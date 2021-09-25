@@ -47,7 +47,7 @@ function Home() {
         <title>Wowmen Academy | Home Page</title>
       </Head>
       <div className="home-page">
-        <div className="home-page-landing">
+        <section className="home-page-landing">
           <div className="top">
             <img src="images/homePage/black-flower-wowmen.svg" alt="blak flower wowmen" />
           </div>
@@ -59,21 +59,21 @@ function Home() {
             <img src="images/homePage/solid-green-fountain.svg" alt="solid green fountain" />
             <h2>TO <br/>OUR <br/>PAGE</h2>
           </div>
-        </div>
-        <div className="home-page-second">
+        </section>
+        <section className="home-page-second">
           <img src="images/homePage/three-sleepy-flowers.svg" alt="three sleepy flowers" />
           <div className="description">
             <h1>Us at a Glance.</h1>
             <p>Founded in 2019, Women Group is a platform for women to Learn, Share and Get Inspired from and with one and another to embrace the amazing potential of women. We’re your bestfriend to your inspiring stories and courious minds. Empowering women through gender equity to go <strong>#BeyondStandards</strong></p>
           </div>
-        </div>
-        <div className="home-page-third">
+        </section>
+        <section className="home-page-third">
           <h1>ini buat socmed</h1>
           <div className="home-page-third-socmed">
             <div className="home-page-third-socmed-items">
               <InstagramEmbed
-                url='https://www.instagram.com/p/CPrljxAsKz1/'
-                clientAccessToken='IGQVJWdndGVmFJVjcxM1ZA0RG1veVBHek9ObXdvdGh1T3hzYzd1ZA3F6WXFnd2x6NXkxdTNCekpLUmRoYTg3eC1tNVRhal9tMDdKWlpTWXZAraFVlMFpGSkQxNUFGYVJ0YWdIVklYWHJOeU5Jd3ZAEWTlMRAZDZD'
+                url='https://www.instagram.com/p/CANVTsvgAeS/'
+                clientAccessToken='IGQVJYWWRlVERXOXpNa1BLRGJDel9Tcnl6VG9TRFF4NWVqanNvclpPN3YxWkg1Tm02T09fMW5yVHp5Vll2QS1nbkxXTlF5U0VTSTU5eC1yZADJKb2h4SUlidnRadExidUh4SnYwYmhsQ1VYOUhKT1FmagZDZD'
                 maxWidth={320}
                 hideCaption={false}
                 containerTagName='div'
@@ -100,8 +100,8 @@ function Home() {
               ))}
             </div>
           </div>
-        </div>
-        <div className="home-page-last">
+        </section>
+        <section className="home-page-last">
           <div className="partner-wrapper">
             {/* TODO: change attribute with fetched data */}
             {partners.map(({ idx, src, alt, href}) => (
@@ -110,10 +110,10 @@ function Home() {
             {/* TODO: Gimana cara bedain kapan pake lingkaran gede kapan pake lingkaran kecil?? */}
           </div>
           <h1>Past<br/>Partners &<br/>Events</h1>
-        </div>
-        <div className="home-page-bottom">
+        </section>
+        <section className="home-page-bottom">
           <img src="images/homePage/zigzag-bottom.svg" alt="zigzag bottom" />
-        </div>
+        </section>
       </div>
     </>
   );
