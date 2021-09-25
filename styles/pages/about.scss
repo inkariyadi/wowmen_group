@@ -362,9 +362,9 @@
         display: flex;
         background-color: $cappuccino;
         flex-direction: column;
-        margin-bottom: 50px;
         &-title{
             display: flex;
+            margin-bottom: 50px;
             & > h2{
                 font-weight: 500;
                 font-size: clamp(35px, 8vw, 120px);
