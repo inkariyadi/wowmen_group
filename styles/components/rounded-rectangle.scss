@@ -17,6 +17,8 @@
     border-radius: 49px;
     width: 132px;
     height: 131px;
+    width: max-content;
+    padding: 4px;
     @media screen and (min-width: 320px) {
         width: calc(132px + (321 - 132) * ((100vw - 320px) / 880));
         height: calc(131px + (316 - 131) * ((100vw - 320px) / 880));
@@ -36,6 +38,8 @@
     background: $greentea;
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 49px;
+    width: max-content;
+    padding: 4px;
     @media screen and (min-width: 320px) {
         width: calc(214px + (516 - 214) * ((100vw - 320px) / 880));
         height: calc(131px + (316 - 131) * ((100vw - 320px) / 880));

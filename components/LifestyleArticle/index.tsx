@@ -1,5 +1,5 @@
 // Import Modules
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import 'moment/locale/id';
 
@@ -8,6 +8,7 @@ import Article from 'interface/Article';
 
 // Import Utils
 import { handleBrokenImg } from 'utils/string';
+import { API_URL, getMemberById } from 'utils/api';
 
 export interface Props {
   article: Article,
@@ -15,13 +16,25 @@ export interface Props {
  
 const LifestyleCard: React.FC<Props> = (props) => {
   const { article } = props;
+  const [ writerName, setWriterName] = useState('');
 
   const {
     headline,
     image,
-    date,
-    writer,
+    updated_at,
+    member,
   } = article;
+  
+  useEffect(()=> {
+    if(member){
+      getMemberById(member)
+        .then((res) => {
+          console.log(res.data.name);
+          setWriterName(res.data.name);
+        });
+    }
+  },[]);
+
   
   return (
     <div className="lifestyle-card">
@@ -31,7 +44,7 @@ const LifestyleCard: React.FC<Props> = (props) => {
           alt="lifestyle"
           className="lifestyle-card-img"
           onError={handleBrokenImg}
-          src={image}
+          src={API_URL + image.url}
         />
       </div>
       <div className="lifestyle-card-headline">
@@ -39,7 +52,7 @@ const LifestyleCard: React.FC<Props> = (props) => {
       </div>
       <div className="lifestyle-card-desc">
         <p>
-          {`${moment(date).format('ll')}/${writer || 'Unknown'}`}
+          {`${moment(updated_at).format('ll')}/${writerName}`}
         </p>
       </div>
     </div>
