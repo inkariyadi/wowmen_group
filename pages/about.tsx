@@ -59,15 +59,15 @@ function About () {
         <title>Wowmen Academy | About Us</title>
       </Head>
       <div className="about">
-        <div className="about-top">
+        <section className="about-top">
           <img src="images/about/big-pink-yellow-flowers.svg" alt="big-pink-yellow-flowers" />
           <div className="about-top-desc">
             <h1>About</h1>
             <h1>Wowmen Group</h1>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
           </div>
-        </div>
-        <div className="about-second">
+        </section>
+        <section className="about-second">
           <img src="images/about/background.svg" alt="background" />
           <div className="about-second-content">
             <div className="about-second-content-title">
@@ -79,8 +79,8 @@ function About () {
             </div>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
           </div>
-        </div>
-        <div className="about-third">
+        </section>
+        <section className="about-third">
           <div className="about-third-title">
             <div className="triangle-up"></div>
             <h2 className="large-screen">Content Pillars and Product</h2>
@@ -110,8 +110,8 @@ function About () {
               </a>
             ))}
           </div>
-        </div>
-        <div className="about-last">
+        </section>
+        <section className="about-last">
           <div className="about-last-title">
             <h2>Our Team</h2>
             <img src="images/about/mountain-star.svg" alt="mountain star" />
@@ -138,7 +138,7 @@ function About () {
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </div>
     </>
    
