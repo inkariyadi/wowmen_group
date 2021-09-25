@@ -115,7 +115,7 @@ function About () {
         <title>Wowmen Academy | Wowmen Academy</title>
       </Head>
       <div className="wowmen">
-        <div className="wowmen-top">
+        <section className="wowmen-top">
           <p>WOWMEN GROUP PROUDLY PRESENTS</p>
           {landingAset.map(({src, alt, styleName}) => 
             alt === 'wowmen logo' ? 
@@ -125,8 +125,8 @@ function About () {
               :
               <img className={styleName} key={alt} src={src} alt={alt}/>
           )}
-        </div>
-        <div className="wowmen-second">
+        </section>
+        <section className="wowmen-second">
           <div className="wowmen-second-left">
             {secondAset.map(({src, alt, styleName}) => 
               alt === 'logo wowmen academy' ? 
@@ -144,9 +144,9 @@ function About () {
               <strong>Wowmen Academy</strong> is and education platform providing learning contents and programs (learning made easy!)<br/><br/>Focusing on building women’s capabilities to act on the world, fostering the development of women’s empowerment, and create future women leaders and changemakers.
             </p>
           </div>
-        </div>
+        </section>
         {/* PADILL SECTION */}
-        <div className="wowmen-third-container">
+        <section className="wowmen-third-container">
           <AwesomeSlider
             selected={currentSlide}
             fillParent
@@ -234,9 +234,9 @@ function About () {
               </div>
             </div>
           </AwesomeSlider>
-        </div>
+        </section>
         
-        <div className="wowmen-learning">
+        <section className="wowmen-learning">
           <h1>Our Learning Library</h1>
           <div className="wowmen-learning-content">
             {/* TODO: change attribute with fetched data or real data */}
@@ -245,12 +245,12 @@ function About () {
             <LibraryCard title="Inspiring" desc="xxxxxxxxxxx" buttontxt="GET TO KNOW" href="/" />
             <LibraryCard title="Activities" desc="Get hands-on with learning! " buttontxt="EXPLORE NOW" href="/" />
           </div>
-        </div>
-        <div className="wowmen-last">
+        </section>
+        <section className="wowmen-last">
           <img src='images/wowmenAcademy/star-left.svg' alt='star left' />
           <h1>#JoinTheSmartCult</h1>
           <img src='images/wowmenAcademy/star-right.svg' alt='star right' />
-        </div>
+        </section>
       </div>
     </>   
   );
