@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import RoundedRectangle from 'components/RoundedRectangle';
+import InstagramEmbed from 'react-instagram-embed';
 
 function Home() {
   // TODO: Change dummy data to fetched data
@@ -70,6 +71,23 @@ function Home() {
           <h1>ini buat socmed</h1>
           <div className="home-page-third-socmed">
             <div className="home-page-third-socmed-items">
+              <InstagramEmbed
+                url='https://www.instagram.com/p/CPrljxAsKz1/'
+                clientAccessToken='IGQVJWdndGVmFJVjcxM1ZA0RG1veVBHek9ObXdvdGh1T3hzYzd1ZA3F6WXFnd2x6NXkxdTNCekpLUmRoYTg3eC1tNVRhal9tMDdKWlpTWXZAraFVlMFpGSkQxNUFGYVJ0YWdIVklYWHJOeU5Jd3ZAEWTlMRAZDZD'
+                maxWidth={320}
+                hideCaption={false}
+                containerTagName='div'
+                protocol=''
+                injectScript
+                // eslint-disable-next-line @typescript-eslint/no-empty-function
+                onLoading={() => { }}
+                // eslint-disable-next-line @typescript-eslint/no-empty-function
+                onSuccess={() => { }}
+                // eslint-disable-next-line @typescript-eslint/no-empty-function
+                onAfterRender={() => { }}
+                // eslint-disable-next-line @typescript-eslint/no-empty-function
+                onFailure={() => { }}
+              />
               {/* TODO: change attribute with fetched data */}
               {socmed1.map(({ idx, src, alt, href}) => (
                 <RoundedRectangle key={idx} type="pink-square" imageSRC={src} imageALT={alt} href={href}/>
