@@ -364,7 +364,6 @@
         flex-direction: column;
         &-title{
             display: flex;
-            margin-bottom: 50px;
             & > h2{
                 font-weight: 500;
                 font-size: clamp(35px, 8vw, 120px);
@@ -389,19 +388,8 @@
                 align-items: center;
                 justify-content: flex-end;
                 transition: all .5s;
-                > img{
-                    width: 100%;
+                &-image{
                     padding: 5vw 0 2vw;
-                    border-radius: 50%;
-                    @media screen and (max-width: 768px) {
-                        width: 75%;
-                    }
-                    @media screen and (max-width: 610px) {
-                        width: 70%;
-                    }
-                    @media screen and (max-width: 480px) {
-                        width: 65%;
-                    }
                 }
                 > h6{
                     font-weight: 700;

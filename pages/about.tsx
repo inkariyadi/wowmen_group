@@ -126,12 +126,15 @@ function About () {
                 {hoverIdx==value.id?
                   <p className="about-last-content-item-desc">{value.description}</p>
                   :
-                  <Image
-                    src={API_URL + value.photo.url}
-                    alt="Picture of the author"
-                    width={220}
-                    height={228}
-                  />
+                  <div className="about-last-content-item-image">
+                    <Image
+                      src={API_URL + value.photo.url}
+                      alt="Picture of the author"
+                      width={220}
+                      height={228}
+                      priority
+                    />
+                  </div>
                 }
                 <h6>{value.name}</h6>
                 <p className="about-last-content-item-position">{value.title}</p>
