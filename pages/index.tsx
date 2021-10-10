@@ -7,30 +7,6 @@ import Script from 'next/script';
 
 function Home() {
   // TODO: Change dummy data to fetched data
-  const [socmed1, setSocmed1] = useState(
-    [
-      {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 1, src: 'images/about/ceo-2.svg', alt: 'gambar', href: '/'},
-      {idx: 2, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 3, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 4, src: 'images/about/ceo-3.svg', alt: 'gambar', href: '/'},
-      {idx: 5, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-    ]
-  );
-  // TODO: Change dummy data to fetched data
-  const [socmed2, setSocmed2] = useState(
-    [
-      {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 1, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 2, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 3, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 4, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 5, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-    ]
-  );
-  // TODO: Change dummy data to fetched data
   const [partners, setPartners] = useState(
     [
       {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
