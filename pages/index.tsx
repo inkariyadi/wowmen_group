@@ -77,8 +77,9 @@ function Home() {
                 { 
                   `var userFeed = new Instafeed({
                     get: 'user',
+                    limit: 6,
                     target: "instafeed-container",
-                      resolution: 'low_resolution',
+                    resolution: 'low_resolution',
                     accessToken: 'IGQVJYWWRlVERXOXpNa1BLRGJDel9Tcnl6VG9TRFF4NWVqanNvclpPN3YxWkg1Tm02T09fMW5yVHp5Vll2QS1nbkxXTlF5U0VTSTU5eC1yZADJKb2h4SUlidnRadExidUh4SnYwYmhsQ1VYOUhKT1FmagZDZD'
                   });
                   userFeed.run();`

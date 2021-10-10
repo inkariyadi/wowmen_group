@@ -251,6 +251,9 @@
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                     gap: 3vw;
+                    @media (max-width: 768px) {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
                     & > a > img{
                         border-radius: 45px;
                     }
