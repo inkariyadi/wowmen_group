@@ -104,3 +104,14 @@ export const getFormLink = () => {
     method: 'get',
   });
 };
+
+/**
+ * Get all list of partners
+ * @param {*} get
+ */
+export const getPartners = () => {
+  return axios({
+    url: `${API_URL}/partners`,
+    method: 'get',
+  });
+};
