@@ -22,6 +22,16 @@ function About () {
   const [hoverIdx, setHoverIdx] = useState(-1);
 
   const [members,setMembers] = useState<Member[]> ([]);
+  function compare( a: Member, b :Member) {
+    if ( a.id < b.id ){
+      return -1;
+    }
+    if ( a.id > b.id ){
+      return 1;
+    }
+    return 0;
+  }
+  
   
   useEffect(()=>{
     getMembers()
@@ -38,7 +48,7 @@ function About () {
           description: value.description,
         }));
         
-        setMembers(data);
+        setMembers(data.sort(compare));
         console.log('Success getting members');
       })
       .catch(() => {
