@@ -127,7 +127,7 @@ function About () {
                   <p className="about-last-content-item-desc">{value.description}</p>
                   :
                   <Image
-                    src={API_URL + value.photo.url}
+                    src={value.photo.url}
                     alt="Picture of the author"
                     width={220}
                     height={228}
