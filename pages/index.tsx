@@ -1,8 +1,10 @@
 // Import Modules
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import RoundedRectangle from 'components/RoundedRectangle';
 import InstagramEmbed from 'react-instagram-embed';
+import { API_URL, getPartners } from 'utils/api';
+import Partner from 'interface/Partner';
 
 function Home() {
   // TODO: Change dummy data to fetched data
@@ -29,18 +31,30 @@ function Home() {
       {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
     ]
   );
-  // TODO: Change dummy data to fetched data
-  const [partners, setPartners] = useState(
-    [
-      {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 1, src: 'images/about/ceo-2.svg', alt: 'gambar', href: '/'},
-      {idx: 2, src: 'images/about/ceo-3.svg', alt: 'gambar', href: '/'},
-      {idx: 3, src: 'images/about/ceo-2.svg', alt: 'gambar', href: '/'},
-      {idx: 4, src: 'images/about/ceo-3.svg', alt: 'gambar', href: '/'},
-      {idx: 5, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-      {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-    ]
-  );
+  const [partners,setPartners] = useState<Partner[]> ([]);
+  
+  useEffect(()=>{
+    getPartners()
+      .then((res) => {
+        const data = res.data.map((value: Partner) => ({
+          id: value.id,
+          name: value.name,
+          company_link: value.company_link,
+          logo: {
+            url: value.logo.url,
+            width: value.logo.width,
+            height: value.logo.height,
+          },
+        }));
+        
+        setPartners(data);
+        console.log('Success getting partners');
+      })
+      .catch(() => {
+        console.log('Something wrong with getting partners');
+      });
+  },[]);
+  
   return (
     <>
       <Head>
@@ -103,9 +117,8 @@ function Home() {
         </section>
         <section className="home-page-last">
           <div className="partner-wrapper">
-            {/* TODO: change attribute with fetched data */}
-            {partners.map(({ idx, src, alt, href}) => (
-              <RoundedRectangle key={idx} type="yellow-circle" imageSRC={src} imageALT={alt} href={href}/>
+            {partners.map(({ id, logo, name, company_link}) => (
+              <RoundedRectangle key={id} type="yellow-circle" imageSRC={logo.url} imageALT={name} href={company_link}/>
             ))}
             {/* TODO: Gimana cara bedain kapan pake lingkaran gede kapan pake lingkaran kecil?? */}
           </div>
