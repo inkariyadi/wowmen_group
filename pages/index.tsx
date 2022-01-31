@@ -103,13 +103,13 @@ function Home() {
                 onFailure={() => { }}
               />
               {/* TODO: change attribute with fetched data */}
-              {socmed1.map(({ idx, src, alt, href}) => (
+              {socmed1.slice(0, 4).map(({ idx, src, alt, href}) => (
                 <RoundedRectangle key={idx} type="pink-square" imageSRC={src} imageALT={alt} href={href}/>
               ))}
             </div>
             <div className="home-page-third-socmed-items home-page-third-socmed-items-two">
               {/* TODO: change attribute with fetched data */}
-              {socmed2.map(({ idx, src, alt, href}) => (
+              {socmed2.slice(0, 2).map(({ idx, src, alt, href}) => (
                 <RoundedRectangle key={idx} type="green-rectangle" imageSRC={src} imageALT={alt} href={href}/>
               ))}
             </div>
