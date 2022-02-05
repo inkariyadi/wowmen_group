@@ -111,7 +111,7 @@ const Programs: React.FC = () => {
               {articles && articles[0].image ? (
                 <div style={{'maxWidth':'100%','minHeight':'400px','height':'100%','position':'relative'}}>
                   <Image
-                    src={API_URL + articles[0].image.url}
+                    src={articles[0].image.url}
                     alt="Picture of the articles"
                     layout="fill"
                     objectFit="cover"
@@ -180,7 +180,7 @@ const Programs: React.FC = () => {
                 {topArticle2?.image ? (
                   <div style={{'maxWidth':'100%','minHeight':'400px','height':'100%','position':'relative'}}>
                     <Image
-                      src={API_URL + topArticle2.image.url}
+                      src={topArticle2.image.url}
                       alt="Picture of the articles"
                       layout="fill"
                       objectFit="cover"

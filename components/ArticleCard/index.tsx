@@ -25,7 +25,7 @@ const ArticleCard: React.SFC<Props> = (props) => {
   return (
     <div className="article-card">
       <div className="article-card-image">
-        <img src={API_URL + image.url} alt="article-image" onError={handleBrokenImg} />
+        <img src={image.url} alt="article-image" onError={handleBrokenImg} />
       </div>
       <h5 className="article-card-headline">
         {headline || 'XXXXXX'}

@@ -44,7 +44,7 @@ const LifestyleCard: React.FC<Props> = (props) => {
           alt="lifestyle"
           className="lifestyle-card-img"
           onError={handleBrokenImg}
-          src={API_URL + image.url}
+          src={image.url}
         />
       </div>
       <div className="lifestyle-card-headline">

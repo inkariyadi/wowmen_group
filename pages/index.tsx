@@ -1,9 +1,8 @@
 // Import Modules
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import RoundedRectangle from 'components/RoundedRectangle';
-// import InstagramEmbed from 'react-instagram-embed';
-import Script from 'next/script';
+import InstagramEmbed from 'react-instagram-embed';
 import { API_URL, getPartners } from 'utils/api';
 import Partner from 'interface/Partner';
 
@@ -32,18 +31,6 @@ function Home() {
       {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
     ]
   );
-  // TODO: Change dummy data to fetched data
-  // const [partners, setPartners] = useState(
-  //   [
-  //     {idx: 0, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-  //     {idx: 1, src: 'images/about/ceo-2.svg', alt: 'gambar', href: '/'},
-  //     {idx: 2, src: 'images/about/ceo-3.svg', alt: 'gambar', href: '/'},
-  //     {idx: 3, src: 'images/about/ceo-2.svg', alt: 'gambar', href: '/'},
-  //     {idx: 4, src: 'images/about/ceo-3.svg', alt: 'gambar', href: '/'},
-  //     {idx: 5, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-  //     {idx: 6, src: 'images/about/ceo-1.svg', alt: 'gambar', href: '/'},
-  //   ]
-  // );
   const [partners,setPartners] = useState<Partner[]> ([]);
   
   useEffect(()=>{
@@ -67,6 +54,7 @@ function Home() {
         console.log('Something wrong with getting partners');
       });
   },[]);
+  
   return (
     <>
       <Head>
@@ -97,27 +85,40 @@ function Home() {
           <h1>ini buat socmed</h1>
           <div className="home-page-third-socmed">
             <div className="home-page-third-socmed-items">
-              <div id="instafeed-container"></div>
-              <Script>
-                { 
-                  `var userFeed = new Instafeed({
-                    get: 'user',
-                    limit: 6,
-                    target: "instafeed-container",
-                    resolution: 'low_resolution',
-                    accessToken: 'IGQVJYWWRlVERXOXpNa1BLRGJDel9Tcnl6VG9TRFF4NWVqanNvclpPN3YxWkg1Tm02T09fMW5yVHp5Vll2QS1nbkxXTlF5U0VTSTU5eC1yZADJKb2h4SUlidnRadExidUh4SnYwYmhsQ1VYOUhKT1FmagZDZD'
-                  });
-                  userFeed.run();`
-                }
-              </Script>
+              <InstagramEmbed
+                url='https://www.instagram.com/p/CANVTsvgAeS/'
+                clientAccessToken='IGQVJYWWRlVERXOXpNa1BLRGJDel9Tcnl6VG9TRFF4NWVqanNvclpPN3YxWkg1Tm02T09fMW5yVHp5Vll2QS1nbkxXTlF5U0VTSTU5eC1yZADJKb2h4SUlidnRadExidUh4SnYwYmhsQ1VYOUhKT1FmagZDZD'
+                maxWidth={320}
+                hideCaption={false}
+                containerTagName='div'
+                protocol=''
+                injectScript
+                // eslint-disable-next-line @typescript-eslint/no-empty-function
+                onLoading={() => { }}
+                // eslint-disable-next-line @typescript-eslint/no-empty-function
+                onSuccess={() => { }}
+                // eslint-disable-next-line @typescript-eslint/no-empty-function
+                onAfterRender={() => { }}
+                // eslint-disable-next-line @typescript-eslint/no-empty-function
+                onFailure={() => { }}
+              />
+              {/* TODO: change attribute with fetched data */}
+              {socmed1.slice(0, 4).map(({ idx, src, alt, href}) => (
+                <RoundedRectangle key={idx} type="pink-square" imageSRC={src} imageALT={alt} href={href}/>
+              ))}
+            </div>
+            <div className="home-page-third-socmed-items home-page-third-socmed-items-two">
+              {/* TODO: change attribute with fetched data */}
+              {socmed2.slice(0, 2).map(({ idx, src, alt, href}) => (
+                <RoundedRectangle key={idx} type="green-rectangle" imageSRC={src} imageALT={alt} href={href}/>
+              ))}
             </div>
           </div>
         </section>
         <section className="home-page-last">
           <div className="partner-wrapper">
-            {/* TODO: change attribute with fetched data */}
-            {partners.map(({ id, name, logo, company_link}) => (
-              <RoundedRectangle key={id} type="yellow-circle" imageSRC={API_URL + logo.url} imageALT={name} href={company_link}/>
+            {partners.map(({ id, logo, name, company_link}) => (
+              <RoundedRectangle key={id} type="yellow-circle" imageSRC={logo.url} imageALT={name} href={company_link}/>
             ))}
             {/* TODO: Gimana cara bedain kapan pake lingkaran gede kapan pake lingkaran kecil?? */}
           </div>
