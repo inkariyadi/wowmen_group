@@ -1,4 +1,4 @@
-interface Partner {
+interface Member {
   id: number,
   name: string,
   company_link: string,
@@ -9,4 +9,4 @@ interface Partner {
   },
 }
 
-export default Partner;
+export default Member;

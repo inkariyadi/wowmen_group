@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Member from 'interface/Member';
 import { API_URL, getMembers } from 'utils/api';
 
-function About ({ member }) {
+function About () {
   const pilars = [
     {src: 'images/about/content-pilar-1.svg', name: 'content pillars 1', href:'/'},
     {src: 'images/about/content-pilar-2.svg', name: 'content pillars 2', href:'/'},
@@ -20,7 +20,8 @@ function About ({ member }) {
     {src: 'images/about/program.svg', name: 'programs', href:'/'},
   ];
   const [hoverIdx, setHoverIdx] = useState(-1);
-  
+
+  const [members,setMembers] = useState<Member[]> ([]);
   function compare( a: Member, b :Member) {
     if ( a.id < b.id ){
       return -1;
@@ -30,33 +31,30 @@ function About ({ member }) {
     }
     return 0;
   }
-  const members = member.sort(compare);
-  // const [members,setMembers] = useState<Member[]> (member.sort(compare));
   
   
-  
-  // useEffect(()=>{
-  //   getMembers()
-  //     .then((res) => {
-  //       const data = res.data.map((value: Member) => ({
-  //         id: value.id,
-  //         name: value.name,
-  //         title: value.title,
-  //         photo: {
-  //           url: value.photo.url,
-  //           width: value.photo.width,
-  //           height: value.photo.height,
-  //         },
-  //         description: value.description,
-  //       }));
+  useEffect(()=>{
+    getMembers()
+      .then((res) => {
+        const data = res.data.map((value: Member) => ({
+          id: value.id,
+          name: value.name,
+          title: value.title,
+          photo: {
+            url: value.photo.url,
+            width: value.photo.width,
+            height: value.photo.height,
+          },
+          description: value.description,
+        }));
         
-  //       setMembers(data.sort(compare));
-  //       console.log('Success getting members');
-  //     })
-  //     .catch(() => {
-  //       console.log('Something wrong with getting members');
-  //     });
-  // },[]);
+        setMembers(data.sort(compare));
+        console.log('Success getting members');
+      })
+      .catch(() => {
+        console.log('Something wrong with getting members');
+      });
+  },[]);
   
   const onHover = (index: number) => {
     setHoverIdx(index);
@@ -138,15 +136,12 @@ function About ({ member }) {
                 {hoverIdx==value.id?
                   <p className="about-last-content-item-desc">{value.description}</p>
                   :
-                  <div className="about-last-content-item-image">
-                    <Image
-                      src={API_URL + value.photo.url}
-                      alt="Picture of the author"
-                      width={220}
-                      height={228}
-                      priority
-                    />
-                  </div>
+                  <Image
+                    src={value.photo.url}
+                    alt="Picture of the author"
+                    width={220}
+                    height={228}
+                  />
                 }
                 <h6>{value.name}</h6>
                 <p className="about-last-content-item-position">{value.title}</p>
@@ -158,17 +153,6 @@ function About ({ member }) {
     </>
    
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch('https://strapi-wowmen.herokuapp.com/members');
-  const member:Member[] = await res.json();
-  
-  return {
-    props: {
-      member,
-    },
-  };
 }
 
 export default About;

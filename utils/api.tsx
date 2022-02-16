@@ -106,10 +106,10 @@ export const getFormLink = () => {
 };
 
 /**
- * Get all list of partners
+ * Get Top Article below lifestyle article
  * @param {*} get
  */
-export const getPartners = () => {
+export const getPartners= () => {
   return axios({
     url: `${API_URL}/partners`,
     method: 'get',

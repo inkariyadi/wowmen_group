@@ -56,6 +56,8 @@
 }
 
 .yellow-circle{
+    pointer-events: none;
+    cursor: default;
     border-radius: 50%;
     background: $banana;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -66,4 +68,5 @@
         min-width: 150px;
         border-radius: 50%;
     }
+    
 }
