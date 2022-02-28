@@ -7,6 +7,7 @@ import { API_URL, getPartners } from 'utils/api';
 import Partner from 'interface/Partner';
 
 function Home() {
+  const ACCESS_TOKEN_IG = 'IGQVJYWWRlVERXOXpNa1BLRGJDel9Tcnl6VG9TRFF4NWVqanNvclpPN3YxWkg1Tm02T09fMW5yVHp5Vll2QS1nbkxXTlF5U0VTSTU5eC1yZADJKb2h4SUlidnRadExidUh4SnYwYmhsQ1VYOUhKT1FmagZDZD';
   // TODO: Change dummy data to fetched data
   const [socmed1, setSocmed1] = useState(
     [
