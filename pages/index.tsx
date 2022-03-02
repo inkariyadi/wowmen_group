@@ -2,12 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import RoundedRectangle from 'components/RoundedRectangle';
-import InstagramEmbed from 'react-instagram-embed';
+// import InstagramEmbed from 'react-instagram-embed';
+import Script from 'next/script';
 import { API_URL, getPartners } from 'utils/api';
 import Partner from 'interface/Partner';
 
 function Home() {
-  const ACCESS_TOKEN_IG = 'IGQVJYWWRlVERXOXpNa1BLRGJDel9Tcnl6VG9TRFF4NWVqanNvclpPN3YxWkg1Tm02T09fMW5yVHp5Vll2QS1nbkxXTlF5U0VTSTU5eC1yZADJKb2h4SUlidnRadExidUh4SnYwYmhsQ1VYOUhKT1FmagZDZD';
   // TODO: Change dummy data to fetched data
   const [socmed1, setSocmed1] = useState(
     [
@@ -55,7 +55,7 @@ function Home() {
         console.log('Something wrong with getting partners');
       });
   },[]);
-  
+
   return (
     <>
       <Head>
@@ -86,23 +86,19 @@ function Home() {
           <h1>ini buat socmed</h1>
           <div className="home-page-third-socmed">
             <div className="home-page-third-socmed-items">
-              <InstagramEmbed
-                url='https://www.instagram.com/p/CANVTsvgAeS/'
-                clientAccessToken='IGQVJYWWRlVERXOXpNa1BLRGJDel9Tcnl6VG9TRFF4NWVqanNvclpPN3YxWkg1Tm02T09fMW5yVHp5Vll2QS1nbkxXTlF5U0VTSTU5eC1yZADJKb2h4SUlidnRadExidUh4SnYwYmhsQ1VYOUhKT1FmagZDZD'
-                maxWidth={320}
-                hideCaption={false}
-                containerTagName='div'
-                protocol=''
-                injectScript
-                // eslint-disable-next-line @typescript-eslint/no-empty-function
-                onLoading={() => { }}
-                // eslint-disable-next-line @typescript-eslint/no-empty-function
-                onSuccess={() => { }}
-                // eslint-disable-next-line @typescript-eslint/no-empty-function
-                onAfterRender={() => { }}
-                // eslint-disable-next-line @typescript-eslint/no-empty-function
-                onFailure={() => { }}
-              />
+              <div id="instafeed-container"></div>
+              <Script>
+                { 
+                  `var userFeed = new Instafeed({
+                    get: 'user',
+                    limit: 6,
+                    target: "instafeed-container",
+                    resolution: 'low_resolution',
+                    accessToken: ${process.env.ACCESS_TOKEN_IG}
+                  });
+                  userFeed.run();`
+                }
+              </Script>
               {/* TODO: change attribute with fetched data */}
               {socmed1.slice(0, 4).map(({ idx, src, alt, href}) => (
                 <RoundedRectangle key={idx} type="pink-square" imageSRC={src} imageALT={alt} href={href}/>
