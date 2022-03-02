@@ -3,11 +3,26 @@
     &-top{
         color: $vanillalatte;
         padding: 3vw 10vw 8vw;
+        @media screen and (max-width: 1200px) {
+            padding: 5vw 10vw 8vw;
+        }
+        @media screen and (max-width: 1024px) {
+            padding: 8vw 10vw 8vw;
+        }
+        @media screen and (max-width: 768px) {
+            padding: 3vw 10vw 8vw;
+        }
+        @media screen and (max-width: 380px) {
+            padding: 8vw 10vw 8vw;
+        }
         &-desc{
             position: relative;
             z-index: 2;
             top: -12vw;
             margin-bottom: -15vw;
+            @media screen and (max-width: 1200px) {
+                top: -15vw;
+            }
             @media screen and (max-width: 768px) {
                 top: -8vw;
                 margin-bottom: 0;
