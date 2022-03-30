@@ -57,3 +57,11 @@ img {
     box-shadow: -4px 4px 4px rgba(0, 0, 0, .2) !important;
   }
 }
+
+div[class^='Carousel-root'] {
+  @media (max-width: 576px) {
+    min-width: 30px;
+  }
+
+  min-width: 500px;
+}

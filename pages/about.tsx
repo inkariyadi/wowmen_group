@@ -139,6 +139,7 @@ function About () {
                   <Image
                     src={value.photo.url}
                     alt="Picture of the author"
+                    className="about-last-content-item-image"
                     width={220}
                     height={228}
                   />

@@ -2,12 +2,27 @@
     background-color: $jeruksaya;
     &-top{
         color: $vanillalatte;
-        padding: 15vw 10vw;
+        padding: 3vw 10vw 8vw;
+        @media screen and (max-width: 1200px) {
+            padding: 5vw 10vw 8vw;
+        }
+        @media screen and (max-width: 1024px) {
+            padding: 8vw 10vw 8vw;
+        }
+        @media screen and (max-width: 768px) {
+            padding: 3vw 10vw 8vw;
+        }
+        @media screen and (max-width: 380px) {
+            padding: 8vw 10vw 8vw;
+        }
         &-desc{
             position: relative;
             z-index: 2;
             top: -12vw;
             margin-bottom: -15vw;
+            @media screen and (max-width: 1200px) {
+                top: -15vw;
+            }
             @media screen and (max-width: 768px) {
                 top: -8vw;
                 margin-bottom: 0;
@@ -362,9 +377,10 @@
         display: flex;
         background-color: $cappuccino;
         flex-direction: column;
+
         &-title{
             display: flex;
-            margin-bottom: 50px;
+            padding-bottom: 5vw;
             & > h2{
                 font-weight: 500;
                 font-size: clamp(35px, 8vw, 120px);
@@ -378,6 +394,7 @@
             display: flex;
             flex-wrap: wrap;
             text-align: center;
+            justify-content: center;
             gap: 5vw;
             @media screen and (max-width: 480px) {
                 justify-content: center;
@@ -386,26 +403,16 @@
                 display: flex;
                 flex-direction: column;
                 font-family: $secondary-font;
-                align-items: center;
-                justify-content: flex-end;
-                transition: all .5s;
-                > img{
-                    width: 100%;
-                    padding: 5vw 0 2vw;
-                    border-radius: 50%;
-                    @media screen and (max-width: 768px) {
-                        width: 75%;
-                    }
-                    @media screen and (max-width: 610px) {
-                        width: 70%;
-                    }
-                    @media screen and (max-width: 480px) {
-                        width: 65%;
-                    }
+                justify-content: flex-start;
+                transition: all .8s;
+                max-width: 200px;
+                &-image{
+                    max-width: 200px !important;
                 }
                 > h6{
                     font-weight: 700;
                     font-size: clamp(7px, 3vw, 13px);
+                    margin-top: 1vw;
                     color: $myblue;
                 }
                 > p{
